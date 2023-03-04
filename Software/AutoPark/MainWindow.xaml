@@ -8,13 +8,11 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        Height="760" Width="1360">
-    <Window.Background>
-        <ImageBrush ImageSource="Images/background.jfif"/>
-    </Window.Background>
+        Height="760" Width="1360"
+        Background="#FFC7E6E4">
     <Grid>
         <!-- Control bar-->
-        <DockPanel Background="Transparent"
+        <DockPanel Background="White"
                    Height="50"
                    LastChildFill="False"
                    HorizontalAlignment="Stretch"
@@ -34,20 +32,24 @@
                    Cursor="Hand"
                    PreviewMouseDown="Minimized">                
             </Image>
-            <TextBlock Text="AUTO PARK"
-                       DockPanel.Dock="Right"
-                       Margin="0 0 500 0"
-                       FontSize="40"
-                       Foreground="White">                
-            </TextBlock>
-
         </DockPanel>
+        <!-- Software's Name-->
+        <TextBlock Text="AUTO PARK"
+                       DockPanel.Dock="Right"
+                       Margin="20 80 1120 600"
+                       FontSize="50"
+                       Foreground="Black" FontFamily="Impact">
+        </TextBlock>
+        <!-- logo-->
+        <Grid Margin="10 150 1120 350">
+            <Image Source="Images/logo.png"/>
+        </Grid>
         <!-- Car frame-->
-        <Grid Margin=" 20 60 20 60">
+        <Grid Margin=" 250 60 20 0">
             <Image Source="Images/carframe.png"/>
         </Grid>
         <!-- Add Card button-->
-        <Grid Margin="220 705 900 5"
+        <Grid Margin="20 410 1130 170"
               Cursor="Hand"
               PreviewMouseDown="AddCard">
             <Image Source="Images/steelbutton.png"/>
@@ -57,7 +59,7 @@
                        FontSize="35"/>
         </Grid>
         <!-- Loss Card button-->
-        <Grid Margin="900 705 220 5"
+        <Grid Margin="20 600 1130 10"
               Cursor="Hand"
               PreviewMouseDown="LossCard">
             <Image Source="Images/steelbutton.png"/>
