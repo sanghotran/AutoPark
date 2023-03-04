@@ -1,0 +1,16 @@
+E:\Project\AutoPark\Software\AutoPark\bin\Debug\AutoPark.exe.config
+E:\Project\AutoPark\Software\AutoPark\bin\Debug\AutoPark.exe
+E:\Project\AutoPark\Software\AutoPark\bin\Debug\AutoPark.pdb
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark.csproj.AssemblyReference.cache
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark.csproj.SuggestedBindingRedirects.cache
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\MainWindow.g.cs
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\App.g.cs
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark_MarkupCompile.cache
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark_MarkupCompile.lref
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\MainWindow.baml
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark.g.resources
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark.Properties.Resources.resources
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark.csproj.GenerateResource.cache
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark.csproj.CoreCompileInputs.cache
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark.exe
+E:\Project\AutoPark\Software\AutoPark\obj\Debug\AutoPark.pdb
