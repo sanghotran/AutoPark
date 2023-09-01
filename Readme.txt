@@ -1,3 +1,2 @@
-Hello, this is my Arch linux.
-Now, I will test my token.
-This is window comment.
+input: rfid -> check slot -> move -> save
+output: rfid -> compare -> move -> delete
