@@ -1,0 +1,103 @@
+ARM GAS  /tmp/ccs7vA7T.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"auto_park.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "lib/auto_park.c"
+  18              		.section	.text.readEncode,"ax",%progbits
+  19              		.align	1
+  20              		.global	readEncode
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	readEncode:
+  26              	.LVL0:
+  27              	.LFB0:
+   1:lib/auto_park.c **** #include "auto_park.h"
+   2:lib/auto_park.c **** 
+   3:lib/auto_park.c **** void readEncode(MOTOR *motor)
+   4:lib/auto_park.c **** {
+  28              		.loc 1 4 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+   5:lib/auto_park.c **** 	
+   6:lib/auto_park.c **** }
+  33              		.loc 1 6 1 view .LVU1
+  34 0000 7047     		bx	lr
+  35              		.cfi_endproc
+  36              	.LFE0:
+  38              		.section	.text.move,"ax",%progbits
+  39              		.align	1
+  40              		.global	move
+  41              		.syntax unified
+  42              		.thumb
+  43              		.thumb_func
+  45              	move:
+  46              	.LVL1:
+  47              	.LFB1:
+   7:lib/auto_park.c **** 
+   8:lib/auto_park.c **** void move(MOTOR *motor)
+   9:lib/auto_park.c **** {
+  48              		.loc 1 9 1 view -0
+  49              		.cfi_startproc
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccs7vA7T.s 			page 2
+
+
+  52              		@ link register save eliminated.
+  10:lib/auto_park.c **** 	if( !motor->pid.process_flag )
+  53              		.loc 1 10 2 view .LVU3
+  54              		.loc 1 10 17 is_stmt 0 view .LVU4
+  55 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+  56              		.loc 1 10 4 view .LVU5
+  57 0004 13B9     		cbnz	r3, .L2
+  11:lib/auto_park.c **** 	{
+  12:lib/auto_park.c **** 		motor->pid.process_flag = true;
+  58              		.loc 1 12 3 is_stmt 1 view .LVU6
+  59              		.loc 1 12 27 is_stmt 0 view .LVU7
+  60 0006 0123     		movs	r3, #1
+  61 0008 80F82030 		strb	r3, [r0, #32]
+  13:lib/auto_park.c **** 	}
+  14:lib/auto_park.c **** 	if( motor->pid.sample_flag )
+  62              		.loc 1 14 2 is_stmt 1 view .LVU8
+  15:lib/auto_park.c **** 	{
+  16:lib/auto_park.c **** 		
+  17:lib/auto_park.c **** 	}
+  63              		.loc 1 17 2 view .LVU9
+  64              	.L2:
+  18:lib/auto_park.c **** }
+  65              		.loc 1 18 1 is_stmt 0 view .LVU10
+  66 000c 7047     		bx	lr
+  67              		.cfi_endproc
+  68              	.LFE1:
+  70              		.text
+  71              	.Letext0:
+  72              		.file 2 "lib/auto_park.h"
+ARM GAS  /tmp/ccs7vA7T.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 auto_park.c
+     /tmp/ccs7vA7T.s:19     .text.readEncode:00000000 $t
+     /tmp/ccs7vA7T.s:25     .text.readEncode:00000000 readEncode
+     /tmp/ccs7vA7T.s:39     .text.move:00000000 $t
+     /tmp/ccs7vA7T.s:45     .text.move:00000000 move
+
+NO UNDEFINED SYMBOLS
