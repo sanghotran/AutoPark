@@ -22,7 +22,7 @@
 #include "usbd_custom_hid_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-
+//#include "TaskCNC.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +31,9 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+//extern SemaphoreHandle_t xSemaphoreUSB;
 
+//extern CNC cnc;
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -91,7 +93,21 @@
 __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DESC_SIZE] __ALIGN_END =
 {
   /* USER CODE BEGIN 0 */
-  0x00,
+  0x06, 0x00, 0xff,              // 	USAGE_PAGE (Vendor defined page 1)
+		0x09, 0x01,                    // 	USAGE (Vendor Usage 0x01)
+    // System Parameters
+    0xa1, 0x01,                    // 	COLLECTION (Application)
+    0x85, 0x02,                    //   REPORT_ID (2)
+    0x75, 0x08,                    //   REPORT_SIZE (8 bits = 1 byte)
+    0x95, 0x40, 	                 //   REPORT_COUNT (64)
+    0x09, 0x01,                    //   USAGE (Vendor Usage 0x01)
+    0x91, 0x82,                    //   OUTPUT ((Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position,Volatile)
+ 
+    0x85, 0x01,                    //   REPORT_ID (1)
+    0x09, 0x04,                    //   USAGE (Vendor Usage 0x04)
+    0x75, 0x08,                    //   REPORT_SIZE (8 bits = 1 byte)
+    0x95, 0x40, 	                 //   REPORT_COUNT (64)
+    0x81, 0x82,                     // (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
   /* USER CODE END 0 */
   0xC0    /*     END_COLLECTION	             */
 };
@@ -176,6 +192,18 @@ static int8_t CUSTOM_HID_DeInit_FS(void)
 static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state)
 {
   /* USER CODE BEGIN 6 */
+	/*
+  USBD_CUSTOM_HID_HandleTypeDef* hhid = (USBD_CUSTOM_HID_HandleTypeDef*)hUsbDeviceFS.pClassData;
+	for(uint8_t i = 0; i < 64; i++)
+	{
+		cnc.DataReceiveFromGUI[i] =  hhid -> Report_buf[i];
+	}  
+	memset(hhid ->Report_buf , 0, 64);
+  memset(cnc.DataSendToGUI, 0, sizeof(cnc.DataSendToGUI));
+
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  xSemaphoreGiveFromISR(xSemaphoreUSB, xHigherPriorityTaskWoken);
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken); */
   return (USBD_OK);
   /* USER CODE END 6 */
 }
