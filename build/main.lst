@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cciMDzZw.s 			page 1
+ARM GAS  /tmp/ccCWzdaS.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
   31:Core/Src/main.c **** /* USER CODE END PTD */
   32:Core/Src/main.c **** 
   33:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
-ARM GAS  /tmp/cciMDzZw.s 			page 2
+ARM GAS  /tmp/ccCWzdaS.s 			page 2
 
 
   34:Core/Src/main.c **** /* USER CODE BEGIN PD */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
   88:Core/Src/main.c ****   /* USER CODE END Init */
   89:Core/Src/main.c **** 
   90:Core/Src/main.c ****   /* Configure the system clock */
-ARM GAS  /tmp/cciMDzZw.s 			page 3
+ARM GAS  /tmp/ccCWzdaS.s 			page 3
 
 
   91:Core/Src/main.c ****   SystemClock_Config();
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  145:Core/Src/main.c ****   */
  146:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
  147:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-ARM GAS  /tmp/cciMDzZw.s 			page 4
+ARM GAS  /tmp/ccCWzdaS.s 			page 4
 
 
  148:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  202:Core/Src/main.c **** 
  203:Core/Src/main.c **** /**
  204:Core/Src/main.c ****   * @brief TIM1 Initialization Function
-ARM GAS  /tmp/cciMDzZw.s 			page 5
+ARM GAS  /tmp/ccCWzdaS.s 			page 5
 
 
  205:Core/Src/main.c ****   * @param None
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  259:Core/Src/main.c **** {
  260:Core/Src/main.c **** 
  261:Core/Src/main.c ****   /* USER CODE BEGIN TIM2_Init 0 */
-ARM GAS  /tmp/cciMDzZw.s 			page 6
+ARM GAS  /tmp/ccCWzdaS.s 			page 6
 
 
  262:Core/Src/main.c **** 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  316:Core/Src/main.c ****   HAL_TIM_MspPostInit(&htim2);
  317:Core/Src/main.c **** 
  318:Core/Src/main.c **** }
-ARM GAS  /tmp/cciMDzZw.s 			page 7
+ARM GAS  /tmp/ccCWzdaS.s 			page 7
 
 
  319:Core/Src/main.c **** 
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  373:Core/Src/main.c ****   */
  374:Core/Src/main.c **** static void MX_TIM4_Init(void)
  375:Core/Src/main.c **** {
-ARM GAS  /tmp/cciMDzZw.s 			page 8
+ARM GAS  /tmp/ccCWzdaS.s 			page 8
 
 
  376:Core/Src/main.c **** 
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
   31              	.LCFI0:
   32              		.cfi_def_cfa_offset 24
   33              		.cfi_offset 4, -24
-ARM GAS  /tmp/cciMDzZw.s 			page 9
+ARM GAS  /tmp/ccCWzdaS.s 			page 9
 
 
   34              		.cfi_offset 5, -20
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
   82              		.loc 1 430 3 view .LVU16
   83              		.loc 1 430 3 view .LVU17
   84 0036 9A69     		ldr	r2, [r3, #24]
-ARM GAS  /tmp/cciMDzZw.s 			page 10
+ARM GAS  /tmp/ccCWzdaS.s 			page 10
 
 
   85 0038 42F00802 		orr	r2, r2, #8
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  126 0074 4046     		mov	r0, r8
  127 0076 FFF7FEFF 		bl	HAL_GPIO_Init
  128              	.LVL2:
-ARM GAS  /tmp/cciMDzZw.s 			page 11
+ARM GAS  /tmp/ccCWzdaS.s 			page 11
 
 
  444:Core/Src/main.c **** 
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  458:Core/Src/main.c **** /**
  459:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
  460:Core/Src/main.c ****   * @retval None
-ARM GAS  /tmp/cciMDzZw.s 			page 12
+ARM GAS  /tmp/ccCWzdaS.s 			page 12
 
 
  461:Core/Src/main.c ****   */
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
   39:Drivers/CMSIS/Include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
   40:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ASM
   41:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
-ARM GAS  /tmp/cciMDzZw.s 			page 13
+ARM GAS  /tmp/ccCWzdaS.s 			page 13
 
 
   42:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
   96:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   97:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   98:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
-ARM GAS  /tmp/cciMDzZw.s 			page 14
+ARM GAS  /tmp/ccCWzdaS.s 			page 14
 
 
   99:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  191              	.LBE8:
  192              	.LBE7:
  467:Core/Src/main.c ****   while (1)
-ARM GAS  /tmp/cciMDzZw.s 			page 15
+ARM GAS  /tmp/ccCWzdaS.s 			page 15
 
 
  193              		.loc 1 467 3 view .LVU46
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  237              		.loc 1 222 24 is_stmt 0 view .LVU57
  238 001a 4360     		str	r3, [r0, #4]
  223:Core/Src/main.c ****   htim1.Init.Period = 65535;
-ARM GAS  /tmp/cciMDzZw.s 			page 16
+ARM GAS  /tmp/ccCWzdaS.s 			page 16
 
 
  239              		.loc 1 223 3 is_stmt 1 view .LVU58
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  271              		.loc 1 237 3 view .LVU80
  237:Core/Src/main.c ****   {
  272              		.loc 1 237 7 is_stmt 0 view .LVU81
-ARM GAS  /tmp/cciMDzZw.s 			page 17
+ARM GAS  /tmp/ccCWzdaS.s 			page 17
 
 
  273 0032 03A9     		add	r1, sp, #12
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  316              	.LFE71:
  318              		.section	.text.MX_TIM2_Init,"ax",%progbits
  319              		.align	1
-ARM GAS  /tmp/cciMDzZw.s 			page 18
+ARM GAS  /tmp/ccCWzdaS.s 			page 18
 
 
  320              		.syntax unified
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  364 0028 4360     		str	r3, [r0, #4]
  274:Core/Src/main.c ****   htim2.Init.Period = 65535;
  365              		.loc 1 274 3 is_stmt 1 view .LVU104
-ARM GAS  /tmp/cciMDzZw.s 			page 19
+ARM GAS  /tmp/ccCWzdaS.s 			page 19
 
 
  274:Core/Src/main.c ****   htim2.Init.Period = 65535;
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  402              		.loc 1 287 6 discriminator 1 view .LVU122
  403 0054 48BB     		cbnz	r0, .L26
  291:Core/Src/main.c ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-ARM GAS  /tmp/cciMDzZw.s 			page 20
+ARM GAS  /tmp/ccCWzdaS.s 			page 20
 
 
  404              		.loc 1 291 3 is_stmt 1 view .LVU123
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  305:Core/Src/main.c ****   {
  441              		.loc 1 305 3 is_stmt 1 view .LVU141
  305:Core/Src/main.c ****   {
-ARM GAS  /tmp/cciMDzZw.s 			page 21
+ARM GAS  /tmp/ccCWzdaS.s 			page 21
 
 
  442              		.loc 1 305 7 is_stmt 0 view .LVU142
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  486 00ae FFF7FEFF 		bl	Error_Handler
  487              	.LVL20:
  488              	.L28:
-ARM GAS  /tmp/cciMDzZw.s 			page 22
+ARM GAS  /tmp/ccCWzdaS.s 			page 22
 
 
  303:Core/Src/main.c ****   }
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  537 0012 0293     		str	r3, [sp, #8]
  338:Core/Src/main.c ****   htim3.Init.Prescaler = 0;
  538              		.loc 1 338 3 is_stmt 1 view .LVU161
-ARM GAS  /tmp/cciMDzZw.s 			page 23
+ARM GAS  /tmp/ccCWzdaS.s 			page 23
 
 
  338:Core/Src/main.c ****   htim3.Init.Prescaler = 0;
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  572 002e 0993     		str	r3, [sp, #36]
  351:Core/Src/main.c ****   sConfig.IC2Filter = 0;
  573              		.loc 1 351 3 is_stmt 1 view .LVU183
-ARM GAS  /tmp/cciMDzZw.s 			page 24
+ARM GAS  /tmp/ccCWzdaS.s 			page 24
 
 
  352:Core/Src/main.c ****   if (HAL_TIM_Encoder_Init(&htim3, &sConfig) != HAL_OK)
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  614              	.L40:
  615 0056 00BF     		.align	2
  616              	.L39:
-ARM GAS  /tmp/cciMDzZw.s 			page 25
+ARM GAS  /tmp/ccCWzdaS.s 			page 25
 
 
  617 0058 00000000 		.word	htim3
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  662              		.loc 1 389 26 is_stmt 0 view .LVU208
  663 001c 8360     		str	r3, [r0, #8]
  390:Core/Src/main.c ****   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-ARM GAS  /tmp/cciMDzZw.s 			page 26
+ARM GAS  /tmp/ccCWzdaS.s 			page 26
 
 
  664              		.loc 1 390 3 is_stmt 1 view .LVU209
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  697              		.loc 1 406 3 is_stmt 1 view .LVU230
  406:Core/Src/main.c ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
  698              		.loc 1 406 37 is_stmt 0 view .LVU231
-ARM GAS  /tmp/cciMDzZw.s 			page 27
+ARM GAS  /tmp/ccCWzdaS.s 			page 27
 
 
  699 0038 0023     		movs	r3, #0
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  746              		.cfi_startproc
  747              		@ args = 0, pretend = 0, frame = 0
  748              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cciMDzZw.s 			page 28
+ARM GAS  /tmp/ccCWzdaS.s 			page 28
 
 
  749 0000 08B5     		push	{r3, lr}
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  785              		.loc 1 189 23 is_stmt 0 view .LVU258
  786 0022 0362     		str	r3, [r0, #32]
  190:Core/Src/main.c ****   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-ARM GAS  /tmp/cciMDzZw.s 			page 29
+ARM GAS  /tmp/ccCWzdaS.s 			page 29
 
 
  787              		.loc 1 190 3 is_stmt 1 view .LVU259
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  832              		.cfi_def_cfa_offset 4
  833              		.cfi_offset 14, -4
  834 0002 95B0     		sub	sp, sp, #84
-ARM GAS  /tmp/cciMDzZw.s 			page 30
+ARM GAS  /tmp/ccCWzdaS.s 			page 30
 
 
  835              	.LCFI21:
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  138:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
  874              		.loc 1 138 3 is_stmt 1 view .LVU286
  138:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
-ARM GAS  /tmp/cciMDzZw.s 			page 31
+ARM GAS  /tmp/ccCWzdaS.s 			page 31
 
 
  875              		.loc 1 138 35 is_stmt 0 view .LVU287
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  153:Core/Src/main.c ****   {
  912              		.loc 1 153 6 discriminator 1 view .LVU305
  913 005e 60B9     		cbnz	r0, .L61
-ARM GAS  /tmp/cciMDzZw.s 			page 32
+ARM GAS  /tmp/ccCWzdaS.s 			page 32
 
 
  157:Core/Src/main.c ****   PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL_DIV1_5;
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  958              		.thumb_func
  960              	main:
  961              	.LFB68:
-ARM GAS  /tmp/cciMDzZw.s 			page 33
+ARM GAS  /tmp/ccCWzdaS.s 			page 33
 
 
   76:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  1003 0026 FEE7     		b	.L64
  1004              		.cfi_endproc
  1005              	.LFE68:
-ARM GAS  /tmp/cciMDzZw.s 			page 34
+ARM GAS  /tmp/ccCWzdaS.s 			page 34
 
 
  1007              		.global	htim4
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  1051              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
  1052              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
  1053              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
-ARM GAS  /tmp/cciMDzZw.s 			page 35
+ARM GAS  /tmp/ccCWzdaS.s 			page 35
 
 
  1054              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h"
@@ -2046,45 +2046,45 @@ ARM GAS  /tmp/cciMDzZw.s 			page 1
  1056              		.file 15 "USB_DEVICE/App/usb_device.h"
  1057              		.file 16 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
  1058              		.file 17 "<built-in>"
-ARM GAS  /tmp/cciMDzZw.s 			page 36
+ARM GAS  /tmp/ccCWzdaS.s 			page 36
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-     /tmp/cciMDzZw.s:19     .text.MX_GPIO_Init:00000000 $t
-     /tmp/cciMDzZw.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-     /tmp/cciMDzZw.s:156    .text.MX_GPIO_Init:00000094 $d
-     /tmp/cciMDzZw.s:163    .text.Error_Handler:00000000 $t
-     /tmp/cciMDzZw.s:169    .text.Error_Handler:00000000 Error_Handler
-     /tmp/cciMDzZw.s:201    .text.MX_TIM1_Init:00000000 $t
-     /tmp/cciMDzZw.s:206    .text.MX_TIM1_Init:00000000 MX_TIM1_Init
-     /tmp/cciMDzZw.s:313    .text.MX_TIM1_Init:00000058 $d
-     /tmp/cciMDzZw.s:1033   .bss.htim1:00000000 htim1
-     /tmp/cciMDzZw.s:319    .text.MX_TIM2_Init:00000000 $t
-     /tmp/cciMDzZw.s:324    .text.MX_TIM2_Init:00000000 MX_TIM2_Init
-     /tmp/cciMDzZw.s:503    .text.MX_TIM2_Init:000000c0 $d
-     /tmp/cciMDzZw.s:1026   .bss.htim2:00000000 htim2
-     /tmp/cciMDzZw.s:508    .text.MX_TIM3_Init:00000000 $t
-     /tmp/cciMDzZw.s:513    .text.MX_TIM3_Init:00000000 MX_TIM3_Init
-     /tmp/cciMDzZw.s:617    .text.MX_TIM3_Init:00000058 $d
-     /tmp/cciMDzZw.s:1019   .bss.htim3:00000000 htim3
-     /tmp/cciMDzZw.s:623    .text.MX_TIM4_Init:00000000 $t
-     /tmp/cciMDzZw.s:628    .text.MX_TIM4_Init:00000000 MX_TIM4_Init
-     /tmp/cciMDzZw.s:732    .text.MX_TIM4_Init:00000058 $d
-     /tmp/cciMDzZw.s:1012   .bss.htim4:00000000 htim4
-     /tmp/cciMDzZw.s:738    .text.MX_SPI1_Init:00000000 $t
-     /tmp/cciMDzZw.s:743    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
-     /tmp/cciMDzZw.s:812    .text.MX_SPI1_Init:00000038 $d
-     /tmp/cciMDzZw.s:1040   .bss.hspi1:00000000 hspi1
-     /tmp/cciMDzZw.s:818    .text.SystemClock_Config:00000000 $t
-     /tmp/cciMDzZw.s:824    .text.SystemClock_Config:00000000 SystemClock_Config
-     /tmp/cciMDzZw.s:954    .text.main:00000000 $t
-     /tmp/cciMDzZw.s:960    .text.main:00000000 main
-     /tmp/cciMDzZw.s:1009   .bss.htim4:00000000 $d
-     /tmp/cciMDzZw.s:1016   .bss.htim3:00000000 $d
-     /tmp/cciMDzZw.s:1023   .bss.htim2:00000000 $d
-     /tmp/cciMDzZw.s:1030   .bss.htim1:00000000 $d
-     /tmp/cciMDzZw.s:1037   .bss.hspi1:00000000 $d
+     /tmp/ccCWzdaS.s:19     .text.MX_GPIO_Init:00000000 $t
+     /tmp/ccCWzdaS.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+     /tmp/ccCWzdaS.s:156    .text.MX_GPIO_Init:00000094 $d
+     /tmp/ccCWzdaS.s:163    .text.Error_Handler:00000000 $t
+     /tmp/ccCWzdaS.s:169    .text.Error_Handler:00000000 Error_Handler
+     /tmp/ccCWzdaS.s:201    .text.MX_TIM1_Init:00000000 $t
+     /tmp/ccCWzdaS.s:206    .text.MX_TIM1_Init:00000000 MX_TIM1_Init
+     /tmp/ccCWzdaS.s:313    .text.MX_TIM1_Init:00000058 $d
+     /tmp/ccCWzdaS.s:1033   .bss.htim1:00000000 htim1
+     /tmp/ccCWzdaS.s:319    .text.MX_TIM2_Init:00000000 $t
+     /tmp/ccCWzdaS.s:324    .text.MX_TIM2_Init:00000000 MX_TIM2_Init
+     /tmp/ccCWzdaS.s:503    .text.MX_TIM2_Init:000000c0 $d
+     /tmp/ccCWzdaS.s:1026   .bss.htim2:00000000 htim2
+     /tmp/ccCWzdaS.s:508    .text.MX_TIM3_Init:00000000 $t
+     /tmp/ccCWzdaS.s:513    .text.MX_TIM3_Init:00000000 MX_TIM3_Init
+     /tmp/ccCWzdaS.s:617    .text.MX_TIM3_Init:00000058 $d
+     /tmp/ccCWzdaS.s:1019   .bss.htim3:00000000 htim3
+     /tmp/ccCWzdaS.s:623    .text.MX_TIM4_Init:00000000 $t
+     /tmp/ccCWzdaS.s:628    .text.MX_TIM4_Init:00000000 MX_TIM4_Init
+     /tmp/ccCWzdaS.s:732    .text.MX_TIM4_Init:00000058 $d
+     /tmp/ccCWzdaS.s:1012   .bss.htim4:00000000 htim4
+     /tmp/ccCWzdaS.s:738    .text.MX_SPI1_Init:00000000 $t
+     /tmp/ccCWzdaS.s:743    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
+     /tmp/ccCWzdaS.s:812    .text.MX_SPI1_Init:00000038 $d
+     /tmp/ccCWzdaS.s:1040   .bss.hspi1:00000000 hspi1
+     /tmp/ccCWzdaS.s:818    .text.SystemClock_Config:00000000 $t
+     /tmp/ccCWzdaS.s:824    .text.SystemClock_Config:00000000 SystemClock_Config
+     /tmp/ccCWzdaS.s:954    .text.main:00000000 $t
+     /tmp/ccCWzdaS.s:960    .text.main:00000000 main
+     /tmp/ccCWzdaS.s:1009   .bss.htim4:00000000 $d
+     /tmp/ccCWzdaS.s:1016   .bss.htim3:00000000 $d
+     /tmp/ccCWzdaS.s:1023   .bss.htim2:00000000 $d
+     /tmp/ccCWzdaS.s:1030   .bss.htim1:00000000 $d
+     /tmp/ccCWzdaS.s:1037   .bss.hspi1:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

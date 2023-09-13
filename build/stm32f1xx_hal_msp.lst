@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc484vG7.s 			page 1
+ARM GAS  /tmp/ccfKzrYg.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
   30:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END TD */
   31:Core/Src/stm32f1xx_hal_msp.c **** 
   32:Core/Src/stm32f1xx_hal_msp.c **** /* Private define ------------------------------------------------------------*/
-ARM GAS  /tmp/cc484vG7.s 			page 2
+ARM GAS  /tmp/ccfKzrYg.s 			page 2
 
 
   33:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN Define */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
   42 000a 9A61     		str	r2, [r3, #24]
   43              		.loc 1 71 3 view .LVU4
   44 000c 9A69     		ldr	r2, [r3, #24]
-ARM GAS  /tmp/cc484vG7.s 			page 3
+ARM GAS  /tmp/ccfKzrYg.s 			page 3
 
 
   45 000e 02F00102 		and	r2, r2, #1
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
   87 0038 7047     		bx	lr
   88              	.L4:
   89 003a 00BF     		.align	2
-ARM GAS  /tmp/cc484vG7.s 			page 4
+ARM GAS  /tmp/ccfKzrYg.s 			page 4
 
 
   90              	.L3:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
   95:Core/Src/stm32f1xx_hal_msp.c ****   {
   96:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN SPI1_MspInit 0 */
   97:Core/Src/stm32f1xx_hal_msp.c **** 
-ARM GAS  /tmp/cc484vG7.s 			page 5
+ARM GAS  /tmp/ccfKzrYg.s 			page 5
 
 
   98:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE END SPI1_MspInit 0 */
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  157 002c 0092     		str	r2, [sp]
  100:Core/Src/stm32f1xx_hal_msp.c **** 
  158              		.loc 1 100 5 view .LVU32
-ARM GAS  /tmp/cc484vG7.s 			page 6
+ARM GAS  /tmp/ccfKzrYg.s 			page 6
 
 
  159 002e 009A     		ldr	r2, [sp]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  197              		.loc 1 113 5 is_stmt 1 view .LVU48
  113:Core/Src/stm32f1xx_hal_msp.c ****     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
  198              		.loc 1 113 25 is_stmt 0 view .LVU49
-ARM GAS  /tmp/cc484vG7.s 			page 7
+ARM GAS  /tmp/ccfKzrYg.s 			page 7
 
 
  199 0058 1023     		movs	r3, #16
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  242              		.align	1
  243              		.global	HAL_SPI_MspDeInit
  244              		.syntax unified
-ARM GAS  /tmp/cc484vG7.s 			page 8
+ARM GAS  /tmp/ccfKzrYg.s 			page 8
 
 
  245              		.thumb
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  270              		.loc 1 155 1 view .LVU68
  271 000a 08BD     		pop	{r3, pc}
  272              	.LVL14:
-ARM GAS  /tmp/cc484vG7.s 			page 9
+ARM GAS  /tmp/ccfKzrYg.s 			page 9
 
 
  273              	.L14:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  317              	.LCFI8:
  318              		.cfi_def_cfa_offset 48
  165:Core/Src/stm32f1xx_hal_msp.c ****   GPIO_InitTypeDef GPIO_InitStruct = {0};
-ARM GAS  /tmp/cc484vG7.s 			page 10
+ARM GAS  /tmp/ccfKzrYg.s 			page 10
 
 
  319              		.loc 1 165 3 is_stmt 1 view .LVU75
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  201:Core/Src/stm32f1xx_hal_msp.c ****     GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
  202:Core/Src/stm32f1xx_hal_msp.c ****     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
  203:Core/Src/stm32f1xx_hal_msp.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
-ARM GAS  /tmp/cc484vG7.s 			page 11
+ARM GAS  /tmp/ccfKzrYg.s 			page 11
 
 
  204:Core/Src/stm32f1xx_hal_msp.c ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  359              		.loc 1 172 5 view .LVU87
  360 0028 2A4B     		ldr	r3, .L25+12
  361 002a 9A69     		ldr	r2, [r3, #24]
-ARM GAS  /tmp/cc484vG7.s 			page 12
+ARM GAS  /tmp/ccfKzrYg.s 			page 12
 
 
  362 002c 42F40062 		orr	r2, r2, #2048
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  401              	.LVL22:
  402              	.L23:
  194:Core/Src/stm32f1xx_hal_msp.c **** 
-ARM GAS  /tmp/cc484vG7.s 			page 13
+ARM GAS  /tmp/ccfKzrYg.s 			page 13
 
 
  403              		.loc 1 194 5 is_stmt 1 view .LVU103
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  441 0088 06A9     		add	r1, sp, #24
  442 008a 1348     		ldr	r0, .L25+16
  443              	.LVL23:
-ARM GAS  /tmp/cc484vG7.s 			page 14
+ARM GAS  /tmp/ccfKzrYg.s 			page 14
 
 
  204:Core/Src/stm32f1xx_hal_msp.c **** 
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  483 00b8 C023     		movs	r3, #192
  484 00ba 0693     		str	r3, [sp, #24]
  224:Core/Src/stm32f1xx_hal_msp.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
-ARM GAS  /tmp/cc484vG7.s 			page 15
+ARM GAS  /tmp/ccfKzrYg.s 			page 15
 
 
  485              		.loc 1 224 5 is_stmt 1 view .LVU135
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  528 0006 00D0     		beq	.L33
  529 0008 7047     		bx	lr
  530              	.L33:
-ARM GAS  /tmp/cc484vG7.s 			page 16
+ARM GAS  /tmp/ccfKzrYg.s 			page 16
 
 
  242:Core/Src/stm32f1xx_hal_msp.c ****   if(htim_base->Instance==TIM2)
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  571              		.cfi_startproc
  572              		@ args = 0, pretend = 0, frame = 24
  573              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc484vG7.s 			page 17
+ARM GAS  /tmp/ccfKzrYg.s 			page 17
 
 
  574              		.loc 1 258 1 is_stmt 0 view .LVU153
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  604              	.LVL31:
  605              	.L37:
  606              	.LCFI16:
-ARM GAS  /tmp/cc484vG7.s 			page 18
+ARM GAS  /tmp/ccfKzrYg.s 			page 18
 
 
  607              		.cfi_restore_state
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  647 0048 00080140 		.word	1073809408
  648              		.cfi_endproc
  649              	.LFE70:
-ARM GAS  /tmp/cc484vG7.s 			page 19
+ARM GAS  /tmp/ccfKzrYg.s 			page 19
 
 
  651              		.section	.text.HAL_TIM_Encoder_MspDeInit,"ax",%progbits
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  679              		.loc 1 309 10 is_stmt 0 view .LVU181
  680 000a 154A     		ldr	r2, .L48+4
  681 000c 9342     		cmp	r3, r2
-ARM GAS  /tmp/cc484vG7.s 			page 20
+ARM GAS  /tmp/ccfKzrYg.s 			page 20
 
 
  682 000e 0FD0     		beq	.L46
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  698 0022 9361     		str	r3, [r2, #24]
  303:Core/Src/stm32f1xx_hal_msp.c **** 
  699              		.loc 1 303 5 view .LVU186
-ARM GAS  /tmp/cc484vG7.s 			page 21
+ARM GAS  /tmp/ccfKzrYg.s 			page 21
 
 
  700 0024 4FF44071 		mov	r1, #768
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  747              	.LFE71:
  749              		.section	.text.HAL_TIM_Base_MspDeInit,"ax",%progbits
  750              		.align	1
-ARM GAS  /tmp/cc484vG7.s 			page 22
+ARM GAS  /tmp/ccfKzrYg.s 			page 22
 
 
  751              		.global	HAL_TIM_Base_MspDeInit
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  783              	.L53:
  784 0018 00100240 		.word	1073876992
  785              		.cfi_endproc
-ARM GAS  /tmp/cc484vG7.s 			page 23
+ARM GAS  /tmp/ccfKzrYg.s 			page 23
 
 
  786              	.LFE72:
@@ -1332,34 +1332,34 @@ ARM GAS  /tmp/cc484vG7.s 			page 1
  795              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
  796              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
  797              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
-ARM GAS  /tmp/cc484vG7.s 			page 24
+ARM GAS  /tmp/ccfKzrYg.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f1xx_hal_msp.c
-     /tmp/cc484vG7.s:19     .text.HAL_MspInit:00000000 $t
-     /tmp/cc484vG7.s:25     .text.HAL_MspInit:00000000 HAL_MspInit
-     /tmp/cc484vG7.s:91     .text.HAL_MspInit:0000003c $d
-     /tmp/cc484vG7.s:97     .text.HAL_SPI_MspInit:00000000 $t
-     /tmp/cc484vG7.s:103    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-     /tmp/cc484vG7.s:235    .text.HAL_SPI_MspInit:0000007c $d
-     /tmp/cc484vG7.s:242    .text.HAL_SPI_MspDeInit:00000000 $t
-     /tmp/cc484vG7.s:248    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-     /tmp/cc484vG7.s:291    .text.HAL_SPI_MspDeInit:00000020 $d
-     /tmp/cc484vG7.s:298    .text.HAL_TIM_Encoder_MspInit:00000000 $t
-     /tmp/cc484vG7.s:304    .text.HAL_TIM_Encoder_MspInit:00000000 HAL_TIM_Encoder_MspInit
-     /tmp/cc484vG7.s:499    .text.HAL_TIM_Encoder_MspInit:000000c8 $d
-     /tmp/cc484vG7.s:509    .text.HAL_TIM_Base_MspInit:00000000 $t
-     /tmp/cc484vG7.s:515    .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
-     /tmp/cc484vG7.s:561    .text.HAL_TIM_MspPostInit:00000000 $t
-     /tmp/cc484vG7.s:567    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
-     /tmp/cc484vG7.s:647    .text.HAL_TIM_MspPostInit:00000048 $d
-     /tmp/cc484vG7.s:652    .text.HAL_TIM_Encoder_MspDeInit:00000000 $t
-     /tmp/cc484vG7.s:658    .text.HAL_TIM_Encoder_MspDeInit:00000000 HAL_TIM_Encoder_MspDeInit
-     /tmp/cc484vG7.s:741    .text.HAL_TIM_Encoder_MspDeInit:0000005c $d
-     /tmp/cc484vG7.s:750    .text.HAL_TIM_Base_MspDeInit:00000000 $t
-     /tmp/cc484vG7.s:756    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
-     /tmp/cc484vG7.s:784    .text.HAL_TIM_Base_MspDeInit:00000018 $d
+     /tmp/ccfKzrYg.s:19     .text.HAL_MspInit:00000000 $t
+     /tmp/ccfKzrYg.s:25     .text.HAL_MspInit:00000000 HAL_MspInit
+     /tmp/ccfKzrYg.s:91     .text.HAL_MspInit:0000003c $d
+     /tmp/ccfKzrYg.s:97     .text.HAL_SPI_MspInit:00000000 $t
+     /tmp/ccfKzrYg.s:103    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+     /tmp/ccfKzrYg.s:235    .text.HAL_SPI_MspInit:0000007c $d
+     /tmp/ccfKzrYg.s:242    .text.HAL_SPI_MspDeInit:00000000 $t
+     /tmp/ccfKzrYg.s:248    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+     /tmp/ccfKzrYg.s:291    .text.HAL_SPI_MspDeInit:00000020 $d
+     /tmp/ccfKzrYg.s:298    .text.HAL_TIM_Encoder_MspInit:00000000 $t
+     /tmp/ccfKzrYg.s:304    .text.HAL_TIM_Encoder_MspInit:00000000 HAL_TIM_Encoder_MspInit
+     /tmp/ccfKzrYg.s:499    .text.HAL_TIM_Encoder_MspInit:000000c8 $d
+     /tmp/ccfKzrYg.s:509    .text.HAL_TIM_Base_MspInit:00000000 $t
+     /tmp/ccfKzrYg.s:515    .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
+     /tmp/ccfKzrYg.s:561    .text.HAL_TIM_MspPostInit:00000000 $t
+     /tmp/ccfKzrYg.s:567    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
+     /tmp/ccfKzrYg.s:647    .text.HAL_TIM_MspPostInit:00000048 $d
+     /tmp/ccfKzrYg.s:652    .text.HAL_TIM_Encoder_MspDeInit:00000000 $t
+     /tmp/ccfKzrYg.s:658    .text.HAL_TIM_Encoder_MspDeInit:00000000 HAL_TIM_Encoder_MspDeInit
+     /tmp/ccfKzrYg.s:741    .text.HAL_TIM_Encoder_MspDeInit:0000005c $d
+     /tmp/ccfKzrYg.s:750    .text.HAL_TIM_Base_MspDeInit:00000000 $t
+     /tmp/ccfKzrYg.s:756    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
+     /tmp/ccfKzrYg.s:784    .text.HAL_TIM_Base_MspDeInit:00000018 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init

@@ -1,0 +1,16 @@
+-std=c11
+-DSTM32F103xB
+-DUSE_HAL_DRIVER
+-D_DEBUG
+-DUNICODE
+-D_UNICODE
+-IDrivers/STM32F1xx_HAL_Driver/Inc
+-ICore/Inc
+-IDrivers/CMSIS/Device/ST/STM32F1xx/Include
+-IDrivers/CMSIS/Include
+-IDrivers/STM32xx_HAL_Driver/Inc/Legacy
+-IUSB_DEVICE/App
+-IUSB_DEVICE/Target
+-IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc
+-IMiddlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc
+-Iuser/lib/gcc/arm-none-eabi/13.2.0/include

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccViCs7D.s 			page 1
+ARM GAS  /tmp/ccA6h9nT.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
   29:USB_DEVICE/App/usbd_desc.c **** 
   30:USB_DEVICE/App/usbd_desc.c **** /* Private typedef -----------------------------------------------------------*/
   31:USB_DEVICE/App/usbd_desc.c **** /* Private define ------------------------------------------------------------*/
-ARM GAS  /tmp/ccViCs7D.s 			page 2
+ARM GAS  /tmp/ccA6h9nT.s 			page 2
 
 
   32:USB_DEVICE/App/usbd_desc.c **** /* Private macro -------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
   86:USB_DEVICE/App/usbd_desc.c ****   * @brief Private macros.
   87:USB_DEVICE/App/usbd_desc.c ****   * @{
   88:USB_DEVICE/App/usbd_desc.c ****   */
-ARM GAS  /tmp/ccViCs7D.s 			page 3
+ARM GAS  /tmp/ccA6h9nT.s 			page 3
 
 
   89:USB_DEVICE/App/usbd_desc.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  143:USB_DEVICE/App/usbd_desc.c **** #if defined ( __ICCARM__ ) /* IAR Compiler */
  144:USB_DEVICE/App/usbd_desc.c ****   #pragma data_alignment=4
  145:USB_DEVICE/App/usbd_desc.c **** #endif /* defined ( __ICCARM__ ) */
-ARM GAS  /tmp/ccViCs7D.s 			page 4
+ARM GAS  /tmp/ccA6h9nT.s 			page 4
 
 
  146:USB_DEVICE/App/usbd_desc.c **** /** USB standard device descriptor. */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  200:USB_DEVICE/App/usbd_desc.c ****   #pragma data_alignment=4
  201:USB_DEVICE/App/usbd_desc.c **** #endif
  202:USB_DEVICE/App/usbd_desc.c **** __ALIGN_BEGIN uint8_t USBD_StringSerial[USB_SIZ_STRING_SERIAL] __ALIGN_END = {
-ARM GAS  /tmp/ccViCs7D.s 			page 5
+ARM GAS  /tmp/ccA6h9nT.s 			page 5
 
 
  203:USB_DEVICE/App/usbd_desc.c ****   USB_SIZ_STRING_SERIAL,
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
   59              	.LVL2:
   60              	.LFB69:
  228:USB_DEVICE/App/usbd_desc.c **** 
-ARM GAS  /tmp/ccViCs7D.s 			page 6
+ARM GAS  /tmp/ccA6h9nT.s 			page 6
 
 
  229:USB_DEVICE/App/usbd_desc.c **** /**
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  253:USB_DEVICE/App/usbd_desc.c ****   }
  254:USB_DEVICE/App/usbd_desc.c ****   else
  255:USB_DEVICE/App/usbd_desc.c ****   {
-ARM GAS  /tmp/ccViCs7D.s 			page 7
+ARM GAS  /tmp/ccA6h9nT.s 			page 7
 
 
  256:USB_DEVICE/App/usbd_desc.c ****     USBD_GetString((uint8_t *)USBD_PRODUCT_STRING_FS, USBD_StrDesc, length);
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  310:USB_DEVICE/App/usbd_desc.c ****   return USBD_StrDesc;
  311:USB_DEVICE/App/usbd_desc.c **** }
  312:USB_DEVICE/App/usbd_desc.c **** 
-ARM GAS  /tmp/ccViCs7D.s 			page 8
+ARM GAS  /tmp/ccA6h9nT.s 			page 8
 
 
  313:USB_DEVICE/App/usbd_desc.c **** /**
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  363:USB_DEVICE/App/usbd_desc.c ****   uint8_t idx = 0;
   97              		.loc 1 363 3 view .LVU15
  364:USB_DEVICE/App/usbd_desc.c **** 
-ARM GAS  /tmp/ccViCs7D.s 			page 9
+ARM GAS  /tmp/ccA6h9nT.s 			page 9
 
 
  365:USB_DEVICE/App/usbd_desc.c ****   for (idx = 0; idx < len; idx++)
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  135              	.LVL8:
  365:USB_DEVICE/App/usbd_desc.c ****   {
  136              		.loc 1 365 21 is_stmt 1 discriminator 1 view .LVU31
-ARM GAS  /tmp/ccViCs7D.s 			page 10
+ARM GAS  /tmp/ccA6h9nT.s 			page 10
 
 
  137 0028 9342     		cmp	r3, r2
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  183              		.loc 1 339 3 view .LVU41
  341:USB_DEVICE/App/usbd_desc.c ****   deviceserial1 = *(uint32_t *) DEVICE_ID2;
  184              		.loc 1 341 3 view .LVU42
-ARM GAS  /tmp/ccViCs7D.s 			page 11
+ARM GAS  /tmp/ccA6h9nT.s 			page 11
 
 
  341:USB_DEVICE/App/usbd_desc.c ****   deviceserial1 = *(uint32_t *) DEVICE_ID2;
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  226              	.L21:
  227 0030 00F0FF1F 		.word	536866816
  228 0034 02000000 		.word	USBD_StringSerial+2
-ARM GAS  /tmp/ccViCs7D.s 			page 12
+ARM GAS  /tmp/ccA6h9nT.s 			page 12
 
 
  229              		.cfi_endproc
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  277              		.global	USBD_FS_ProductStrDescriptor
  278              		.syntax unified
  279              		.thumb
-ARM GAS  /tmp/ccViCs7D.s 			page 13
+ARM GAS  /tmp/ccA6h9nT.s 			page 13
 
 
  280              		.thumb_func
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  323              	.LVL26:
  256:USB_DEVICE/App/usbd_desc.c ****   }
  324              		.loc 1 256 5 view .LVU76
-ARM GAS  /tmp/ccViCs7D.s 			page 14
+ARM GAS  /tmp/ccA6h9nT.s 			page 14
 
 
  325 001a F8E7     		b	.L29
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  370              		.loc 1 271 3 is_stmt 1 view .LVU83
  272:USB_DEVICE/App/usbd_desc.c **** 
  371              		.loc 1 272 1 is_stmt 0 view .LVU84
-ARM GAS  /tmp/ccViCs7D.s 			page 15
+ARM GAS  /tmp/ccA6h9nT.s 			page 15
 
 
  372 000e 2046     		mov	r0, r4
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  417 000a FFF7FEFF 		bl	USBD_GetString
  418              	.LVL34:
  419              	.L39:
-ARM GAS  /tmp/ccViCs7D.s 			page 16
+ARM GAS  /tmp/ccA6h9nT.s 			page 16
 
 
  310:USB_DEVICE/App/usbd_desc.c **** }
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  464 0000 08B5     		push	{r3, lr}
  465              	.LCFI7:
  466              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccViCs7D.s 			page 17
+ARM GAS  /tmp/ccA6h9nT.s 			page 17
 
 
  467              		.cfi_offset 3, -8
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  513              	USBD_StringSerial:
  514 0000 1A0300   		.ascii	"\032\003\000"
  515 0003 00000000 		.space	23
-ARM GAS  /tmp/ccViCs7D.s 			page 18
+ARM GAS  /tmp/ccA6h9nT.s 			page 18
 
 
  515      00000000 
@@ -1066,51 +1066,51 @@ ARM GAS  /tmp/ccViCs7D.s 			page 1
  555              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
  556              		.file 5 "USB_DEVICE/App/usbd_desc.h"
  557              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h"
-ARM GAS  /tmp/ccViCs7D.s 			page 19
+ARM GAS  /tmp/ccA6h9nT.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_desc.c
-     /tmp/ccViCs7D.s:19     .text.USBD_FS_DeviceDescriptor:00000000 $t
-     /tmp/ccViCs7D.s:25     .text.USBD_FS_DeviceDescriptor:00000000 USBD_FS_DeviceDescriptor
-     /tmp/ccViCs7D.s:47     .text.USBD_FS_DeviceDescriptor:00000008 $d
-     /tmp/ccViCs7D.s:535    .data.USBD_FS_DeviceDesc:00000000 USBD_FS_DeviceDesc
-     /tmp/ccViCs7D.s:52     .text.USBD_FS_LangIDStrDescriptor:00000000 $t
-     /tmp/ccViCs7D.s:58     .text.USBD_FS_LangIDStrDescriptor:00000000 USBD_FS_LangIDStrDescriptor
-     /tmp/ccViCs7D.s:80     .text.USBD_FS_LangIDStrDescriptor:00000008 $d
-     /tmp/ccViCs7D.s:528    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
-     /tmp/ccViCs7D.s:85     .text.IntToUnicode:00000000 $t
-     /tmp/ccViCs7D.s:90     .text.IntToUnicode:00000000 IntToUnicode
-     /tmp/ccViCs7D.s:165    .text.Get_SerialNum:00000000 $t
-     /tmp/ccViCs7D.s:170    .text.Get_SerialNum:00000000 Get_SerialNum
-     /tmp/ccViCs7D.s:227    .text.Get_SerialNum:00000030 $d
-     /tmp/ccViCs7D.s:513    .data.USBD_StringSerial:00000000 USBD_StringSerial
-     /tmp/ccViCs7D.s:233    .text.USBD_FS_SerialStrDescriptor:00000000 $t
-     /tmp/ccViCs7D.s:239    .text.USBD_FS_SerialStrDescriptor:00000000 USBD_FS_SerialStrDescriptor
-     /tmp/ccViCs7D.s:267    .text.USBD_FS_SerialStrDescriptor:00000010 $d
-     /tmp/ccViCs7D.s:272    .rodata.USBD_FS_ProductStrDescriptor.str1.4:00000000 $d
-     /tmp/ccViCs7D.s:276    .text.USBD_FS_ProductStrDescriptor:00000000 $t
-     /tmp/ccViCs7D.s:282    .text.USBD_FS_ProductStrDescriptor:00000000 USBD_FS_ProductStrDescriptor
-     /tmp/ccViCs7D.s:329    .text.USBD_FS_ProductStrDescriptor:0000001c $d
-     /tmp/ccViCs7D.s:521    .bss.USBD_StrDesc:00000000 USBD_StrDesc
-     /tmp/ccViCs7D.s:335    .rodata.USBD_FS_ManufacturerStrDescriptor.str1.4:00000000 $d
-     /tmp/ccViCs7D.s:339    .text.USBD_FS_ManufacturerStrDescriptor:00000000 $t
-     /tmp/ccViCs7D.s:345    .text.USBD_FS_ManufacturerStrDescriptor:00000000 USBD_FS_ManufacturerStrDescriptor
-     /tmp/ccViCs7D.s:377    .text.USBD_FS_ManufacturerStrDescriptor:00000014 $d
-     /tmp/ccViCs7D.s:383    .rodata.USBD_FS_ConfigStrDescriptor.str1.4:00000000 $d
-     /tmp/ccViCs7D.s:387    .text.USBD_FS_ConfigStrDescriptor:00000000 $t
-     /tmp/ccViCs7D.s:393    .text.USBD_FS_ConfigStrDescriptor:00000000 USBD_FS_ConfigStrDescriptor
-     /tmp/ccViCs7D.s:440    .text.USBD_FS_ConfigStrDescriptor:0000001c $d
-     /tmp/ccViCs7D.s:446    .rodata.USBD_FS_InterfaceStrDescriptor.str1.4:00000000 $d
-     /tmp/ccViCs7D.s:450    .text.USBD_FS_InterfaceStrDescriptor:00000000 $t
-     /tmp/ccViCs7D.s:456    .text.USBD_FS_InterfaceStrDescriptor:00000000 USBD_FS_InterfaceStrDescriptor
-     /tmp/ccViCs7D.s:503    .text.USBD_FS_InterfaceStrDescriptor:0000001c $d
-     /tmp/ccViCs7D.s:510    .data.USBD_StringSerial:00000000 $d
-     /tmp/ccViCs7D.s:518    .bss.USBD_StrDesc:00000000 $d
-     /tmp/ccViCs7D.s:525    .data.USBD_LangIDDesc:00000000 $d
-     /tmp/ccViCs7D.s:532    .data.USBD_FS_DeviceDesc:00000000 $d
-     /tmp/ccViCs7D.s:543    .data.FS_Desc:00000000 FS_Desc
-     /tmp/ccViCs7D.s:540    .data.FS_Desc:00000000 $d
+     /tmp/ccA6h9nT.s:19     .text.USBD_FS_DeviceDescriptor:00000000 $t
+     /tmp/ccA6h9nT.s:25     .text.USBD_FS_DeviceDescriptor:00000000 USBD_FS_DeviceDescriptor
+     /tmp/ccA6h9nT.s:47     .text.USBD_FS_DeviceDescriptor:00000008 $d
+     /tmp/ccA6h9nT.s:535    .data.USBD_FS_DeviceDesc:00000000 USBD_FS_DeviceDesc
+     /tmp/ccA6h9nT.s:52     .text.USBD_FS_LangIDStrDescriptor:00000000 $t
+     /tmp/ccA6h9nT.s:58     .text.USBD_FS_LangIDStrDescriptor:00000000 USBD_FS_LangIDStrDescriptor
+     /tmp/ccA6h9nT.s:80     .text.USBD_FS_LangIDStrDescriptor:00000008 $d
+     /tmp/ccA6h9nT.s:528    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
+     /tmp/ccA6h9nT.s:85     .text.IntToUnicode:00000000 $t
+     /tmp/ccA6h9nT.s:90     .text.IntToUnicode:00000000 IntToUnicode
+     /tmp/ccA6h9nT.s:165    .text.Get_SerialNum:00000000 $t
+     /tmp/ccA6h9nT.s:170    .text.Get_SerialNum:00000000 Get_SerialNum
+     /tmp/ccA6h9nT.s:227    .text.Get_SerialNum:00000030 $d
+     /tmp/ccA6h9nT.s:513    .data.USBD_StringSerial:00000000 USBD_StringSerial
+     /tmp/ccA6h9nT.s:233    .text.USBD_FS_SerialStrDescriptor:00000000 $t
+     /tmp/ccA6h9nT.s:239    .text.USBD_FS_SerialStrDescriptor:00000000 USBD_FS_SerialStrDescriptor
+     /tmp/ccA6h9nT.s:267    .text.USBD_FS_SerialStrDescriptor:00000010 $d
+     /tmp/ccA6h9nT.s:272    .rodata.USBD_FS_ProductStrDescriptor.str1.4:00000000 $d
+     /tmp/ccA6h9nT.s:276    .text.USBD_FS_ProductStrDescriptor:00000000 $t
+     /tmp/ccA6h9nT.s:282    .text.USBD_FS_ProductStrDescriptor:00000000 USBD_FS_ProductStrDescriptor
+     /tmp/ccA6h9nT.s:329    .text.USBD_FS_ProductStrDescriptor:0000001c $d
+     /tmp/ccA6h9nT.s:521    .bss.USBD_StrDesc:00000000 USBD_StrDesc
+     /tmp/ccA6h9nT.s:335    .rodata.USBD_FS_ManufacturerStrDescriptor.str1.4:00000000 $d
+     /tmp/ccA6h9nT.s:339    .text.USBD_FS_ManufacturerStrDescriptor:00000000 $t
+     /tmp/ccA6h9nT.s:345    .text.USBD_FS_ManufacturerStrDescriptor:00000000 USBD_FS_ManufacturerStrDescriptor
+     /tmp/ccA6h9nT.s:377    .text.USBD_FS_ManufacturerStrDescriptor:00000014 $d
+     /tmp/ccA6h9nT.s:383    .rodata.USBD_FS_ConfigStrDescriptor.str1.4:00000000 $d
+     /tmp/ccA6h9nT.s:387    .text.USBD_FS_ConfigStrDescriptor:00000000 $t
+     /tmp/ccA6h9nT.s:393    .text.USBD_FS_ConfigStrDescriptor:00000000 USBD_FS_ConfigStrDescriptor
+     /tmp/ccA6h9nT.s:440    .text.USBD_FS_ConfigStrDescriptor:0000001c $d
+     /tmp/ccA6h9nT.s:446    .rodata.USBD_FS_InterfaceStrDescriptor.str1.4:00000000 $d
+     /tmp/ccA6h9nT.s:450    .text.USBD_FS_InterfaceStrDescriptor:00000000 $t
+     /tmp/ccA6h9nT.s:456    .text.USBD_FS_InterfaceStrDescriptor:00000000 USBD_FS_InterfaceStrDescriptor
+     /tmp/ccA6h9nT.s:503    .text.USBD_FS_InterfaceStrDescriptor:0000001c $d
+     /tmp/ccA6h9nT.s:510    .data.USBD_StringSerial:00000000 $d
+     /tmp/ccA6h9nT.s:518    .bss.USBD_StrDesc:00000000 $d
+     /tmp/ccA6h9nT.s:525    .data.USBD_LangIDDesc:00000000 $d
+     /tmp/ccA6h9nT.s:532    .data.USBD_FS_DeviceDesc:00000000 $d
+     /tmp/ccA6h9nT.s:543    .data.FS_Desc:00000000 FS_Desc
+     /tmp/ccA6h9nT.s:540    .data.FS_Desc:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_GetString
