@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccJlLcSm.s 			page 1
+ARM GAS  /tmp/ccG2Id4u.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -51,14 +51,14 @@ ARM GAS  /tmp/ccJlLcSm.s 			page 1
   23:USB_DEVICE/App/usb_device.c **** #include "usb_device.h"
   24:USB_DEVICE/App/usb_device.c **** #include "usbd_core.h"
   25:USB_DEVICE/App/usb_device.c **** #include "usbd_desc.h"
-  26:USB_DEVICE/App/usb_device.c **** #include "usbd_customhid.h"
-  27:USB_DEVICE/App/usb_device.c **** #include "usbd_custom_hid_if.h"
+  26:USB_DEVICE/App/usb_device.c **** #include "usbd_cdc.h"
+  27:USB_DEVICE/App/usb_device.c **** #include "usbd_cdc_if.h"
   28:USB_DEVICE/App/usb_device.c **** 
   29:USB_DEVICE/App/usb_device.c **** /* USER CODE BEGIN Includes */
   30:USB_DEVICE/App/usb_device.c **** 
   31:USB_DEVICE/App/usb_device.c **** /* USER CODE END Includes */
   32:USB_DEVICE/App/usb_device.c **** 
-ARM GAS  /tmp/ccJlLcSm.s 			page 2
+ARM GAS  /tmp/ccG2Id4u.s 			page 2
 
 
   33:USB_DEVICE/App/usb_device.c **** /* USER CODE BEGIN PV */
@@ -118,14 +118,14 @@ ARM GAS  /tmp/ccJlLcSm.s 			page 1
   42              	.LVL0:
   43              		.loc 1 71 6 discriminator 1 view .LVU3
   44 000c 70B9     		cbnz	r0, .L7
-ARM GAS  /tmp/ccJlLcSm.s 			page 3
+ARM GAS  /tmp/ccG2Id4u.s 			page 3
 
 
   45              	.L2:
   72:USB_DEVICE/App/usb_device.c ****   {
   73:USB_DEVICE/App/usb_device.c ****     Error_Handler();
   74:USB_DEVICE/App/usb_device.c ****   }
-  75:USB_DEVICE/App/usb_device.c ****   if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_CUSTOM_HID) != USBD_OK)
+  75:USB_DEVICE/App/usb_device.c ****   if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_CDC) != USBD_OK)
   46              		.loc 1 75 3 is_stmt 1 view .LVU4
   47              		.loc 1 75 7 is_stmt 0 view .LVU5
   48 000e 0F49     		ldr	r1, .L11+8
@@ -138,12 +138,12 @@ ARM GAS  /tmp/ccJlLcSm.s 			page 1
   76:USB_DEVICE/App/usb_device.c ****   {
   77:USB_DEVICE/App/usb_device.c ****     Error_Handler();
   78:USB_DEVICE/App/usb_device.c ****   }
-  79:USB_DEVICE/App/usb_device.c ****   if (USBD_CUSTOM_HID_RegisterInterface(&hUsbDeviceFS, &USBD_CustomHID_fops_FS) != USBD_OK)
+  79:USB_DEVICE/App/usb_device.c ****   if (USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_Interface_fops_FS) != USBD_OK)
   55              		.loc 1 79 3 is_stmt 1 view .LVU7
   56              		.loc 1 79 7 is_stmt 0 view .LVU8
   57 0018 0D49     		ldr	r1, .L11+12
   58 001a 0B48     		ldr	r0, .L11+4
-  59 001c FFF7FEFF 		bl	USBD_CUSTOM_HID_RegisterInterface
+  59 001c FFF7FEFF 		bl	USBD_CDC_RegisterInterface
   60              	.LVL2:
   61              		.loc 1 79 6 discriminator 1 view .LVU9
   62 0020 50B9     		cbnz	r0, .L9
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccJlLcSm.s 			page 1
   78 0030 EDE7     		b	.L2
   79              	.L8:
   77:USB_DEVICE/App/usb_device.c ****   }
-ARM GAS  /tmp/ccJlLcSm.s 			page 4
+ARM GAS  /tmp/ccG2Id4u.s 			page 4
 
 
   80              		.loc 1 77 5 view .LVU15
@@ -203,8 +203,8 @@ ARM GAS  /tmp/ccJlLcSm.s 			page 1
   97              	.L11:
   98 0044 00000000 		.word	FS_Desc
   99 0048 00000000 		.word	hUsbDeviceFS
- 100 004c 00000000 		.word	USBD_CUSTOM_HID
- 101 0050 00000000 		.word	USBD_CustomHID_fops_FS
+ 100 004c 00000000 		.word	USBD_CDC
+ 101 0050 00000000 		.word	USBD_Interface_fops_FS
  102              		.cfi_endproc
  103              	.LFE68:
  105              		.global	hUsbDeviceFS
@@ -221,28 +221,28 @@ ARM GAS  /tmp/ccJlLcSm.s 			page 1
  114              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
  115              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  116              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
- 117              		.file 5 "Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h"
+ 117              		.file 5 "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h"
  118              		.file 6 "USB_DEVICE/App/usbd_desc.h"
- 119              		.file 7 "USB_DEVICE/App/usbd_custom_hid_if.h"
+ 119              		.file 7 "USB_DEVICE/App/usbd_cdc_if.h"
  120              		.file 8 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
  121              		.file 9 "Core/Inc/main.h"
-ARM GAS  /tmp/ccJlLcSm.s 			page 5
+ARM GAS  /tmp/ccG2Id4u.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usb_device.c
-     /tmp/ccJlLcSm.s:19     .text.MX_USB_DEVICE_Init:00000000 $t
-     /tmp/ccJlLcSm.s:25     .text.MX_USB_DEVICE_Init:00000000 MX_USB_DEVICE_Init
-     /tmp/ccJlLcSm.s:98     .text.MX_USB_DEVICE_Init:00000044 $d
-     /tmp/ccJlLcSm.s:110    .bss.hUsbDeviceFS:00000000 hUsbDeviceFS
-     /tmp/ccJlLcSm.s:107    .bss.hUsbDeviceFS:00000000 $d
+     /tmp/ccG2Id4u.s:19     .text.MX_USB_DEVICE_Init:00000000 $t
+     /tmp/ccG2Id4u.s:25     .text.MX_USB_DEVICE_Init:00000000 MX_USB_DEVICE_Init
+     /tmp/ccG2Id4u.s:98     .text.MX_USB_DEVICE_Init:00000044 $d
+     /tmp/ccG2Id4u.s:110    .bss.hUsbDeviceFS:00000000 hUsbDeviceFS
+     /tmp/ccG2Id4u.s:107    .bss.hUsbDeviceFS:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_Init
 USBD_RegisterClass
-USBD_CUSTOM_HID_RegisterInterface
+USBD_CDC_RegisterInterface
 USBD_Start
 Error_Handler
 FS_Desc
-USBD_CUSTOM_HID
-USBD_CustomHID_fops_FS
+USBD_CDC
+USBD_Interface_fops_FS

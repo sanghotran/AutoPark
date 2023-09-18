@@ -18,11 +18,28 @@ typedef struct{
 	int time_sample;
 
 } PID;
+
+typedef struct{
+	char receive[64];
+	char trans[64];
+
+} DATA;
+
 typedef struct {
 	PID pid;
 	
 } MOTOR;
 
+typedef struct {
+	MOTOR up;
+	MOTOR roll;
+	MOTOR out;
+
+	DATA cdc;
+	DATA spi;
+} MACHINE;
+
+void process_data(MACHINE*);
 void move(MOTOR *motor);
 
 #endif

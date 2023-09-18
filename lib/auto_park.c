@@ -16,3 +16,19 @@ void move(MOTOR *motor)
 		
 	}
 }
+
+/* global function */
+void process_data(MACHINE *machine)
+{
+	char cmd = machine->cdc.receive[0];
+	switch(cmd)
+	{
+		case 'D':
+			break;
+		case 'A':
+			break;
+		case 'R':
+			break;
+
+	}
+}
