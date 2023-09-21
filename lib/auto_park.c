@@ -41,7 +41,7 @@ void PID_control(MOTOR *motor)
 	if(abs(e) < motor->pid.ERROR)
 	{
 		motor->pid.finish_flag = true;
-		motor->pid.pwm = 0;
+		//motor->pid.pwm = 0;
 		motor->pid.erro_pre = 0;
 	}
 }
@@ -50,7 +50,7 @@ void home(MOTOR *motor)
 {
 	if(HAL_GPIO_ReadPin(motor->pin.gpio_home, motor->pin.home) == 1)
 	{
-		motor->pid.pwm = -1;
+		motor->pid.pwm = -100;
 		PWM(motor);
 		motor->pid.home_flag = false;
 	}
@@ -62,27 +62,84 @@ void home(MOTOR *motor)
 	}
 }
 
-void move(MOTOR *motor)
+void move_home(MACHINE *machine)
 {
-	if( !motor->pid.process_flag )
+
+}
+
+void move(MOTOR *motor, int setpoint)
+{
+	motor->pid.process_flag = true;
+	motor->pid.setpoint = setpoint;
+	while(motor->pid.process_flag)
 	{
-		motor->pid.process_flag = true;
-	}
-	if( motor->pid.sample_flag )
-	{
-		readEncoder(motor);
-		PID_control(motor);
-		motor->pid.sample_flag = false;
-		motor->pid.time_sample = 0;
-	}
-	PWM(motor);
-	if(motor->pid.finish_flag)
-	{
-		motor->pid.pwm = 0;
+		if( motor->pid.sample_flag )
+		{
+			readEncoder(motor);
+			PID_control(motor);
+			motor->pid.sample_flag = false;
+			motor->pid.time_sample = 0;
+		}
 		PWM(motor);
-		motor->pid.process_flag = false;
-		motor->pid.time_sample = 0;
+		if(motor->pid.finish_flag)
+		{
+			motor->pid.pwm = 0;
+			PWM(motor);
+			motor->pid.process_flag = false;
+			//motor->pid.time_sample = 0;
+		}
 	}
+}
+
+void slot_to_pos(MACHINE *machine)
+{
+	switch(machine->slot)
+	{
+		case '1':
+			break;
+		case '2':
+			break;
+		case '3':
+			break;
+		case '4':
+			break;
+		case '5':
+			break;
+		case '6':
+			break;
+		case '7':
+			break;
+		case '8':
+			break;
+
+	}
+}
+
+void run_in(MACHINE *machine)
+{
+	slot_to_pos(machine);
+	move(&machine->out, machine->out.ref);
+	move(&machine->up, machine->up.ref);	
+	move(&machine->out, machine->out.ref);
+	move(&machine->up, machine->up.target);
+	move(&machine->roll, machine->roll.target);
+	move(&machine->out, machine->out.target);
+	move(&machine->up, machine->up.target - machine->up.ref);
+	move_home(machine);
+}
+
+void run_out(MACHINE *machine)
+{
+	slot_to_pos(machine);
+	move(&machine->up, machine->up.target - machine->up.ref);
+	move(&machine->roll, machine->roll.target);
+	move(&machine->out, machine->out.target);
+	move(&machine->up, machine->up.target);
+	move_home(machine);
+	move(&machine->up, machine->up.ref);
+	move(&machine->out, machine->out.target);
+	move(&machine->up, 0);
+	move_home(machine);
 }
 
 /* global function */
@@ -100,8 +157,13 @@ void process_data(MACHINE *machine)
 		case 'A':
 			machine->mode = 3; // mode add card
 			break;
-		case 'R':
-			machine->mode = 4; // mode run motor
+		case 'I':
+			machine->mode = 4; // mode run in motor
+			machine->slot = machine->cdc.receive[1];
+			break;
+		case 'O':
+			machine->mode = 5; // mode run out motor
+			machine->slot = machine->cdc.receive[1];
 			break;
 
 	}
@@ -118,10 +180,15 @@ void process_mode(MACHINE *machine)
 		case 3: // mode add card
 			machine->mode = 1; // mode idle connect
 			break;
-		case 4: // mode run motor
+		case 4: // mode run in motor: up -> out -> up -> roll -> out -> up -> out -> up -> roll -> out
 			machine->mode = 1; // mode idle connect
+			run_in(machine);
 			break;
-		case 5: // mode scan
+		case 5: // mode run out motor: out -> up -> roll -> out -> up -> out -> up -> roll -> out -> up
+			machine->mode = 1; // mode idle connect
+			run_out(machine);
+			break;
+		case 6: // mode scan
 			machine->mode = 1; // mode idle connect
 			break;
 	}

@@ -49,6 +49,8 @@ typedef struct{
 typedef struct {
 	PID pid;
 	PIN pin;
+	int target;
+	int ref;
 	
 } MOTOR;
 
@@ -61,6 +63,7 @@ typedef struct {
 	DATA spi;
 
 	uint8_t mode;
+	uint8_t slot;
 } MACHINE;
 
 void process_data(MACHINE*);
