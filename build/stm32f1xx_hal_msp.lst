@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccrzY3dK.s 			page 1
+ARM GAS  /tmp/ccNuhS3K.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
   30:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END TD */
   31:Core/Src/stm32f1xx_hal_msp.c **** 
   32:Core/Src/stm32f1xx_hal_msp.c **** /* Private define ------------------------------------------------------------*/
-ARM GAS  /tmp/ccrzY3dK.s 			page 2
+ARM GAS  /tmp/ccNuhS3K.s 			page 2
 
 
   33:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN Define */
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
   42 000a 9A61     		str	r2, [r3, #24]
   43              		.loc 1 71 3 view .LVU4
   44 000c 9A69     		ldr	r2, [r3, #24]
-ARM GAS  /tmp/ccrzY3dK.s 			page 3
+ARM GAS  /tmp/ccNuhS3K.s 			page 3
 
 
   45 000e 02F00102 		and	r2, r2, #1
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
   87 0038 7047     		bx	lr
   88              	.L4:
   89 003a 00BF     		.align	2
-ARM GAS  /tmp/ccrzY3dK.s 			page 4
+ARM GAS  /tmp/ccNuhS3K.s 			page 4
 
 
   90              	.L3:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  135              	.L5:
   95:Core/Src/stm32f1xx_hal_msp.c ****   {
   96:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN SPI1_MspInit 0 */
-ARM GAS  /tmp/ccrzY3dK.s 			page 5
+ARM GAS  /tmp/ccNuhS3K.s 			page 5
 
 
   97:Core/Src/stm32f1xx_hal_msp.c **** 
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  100:Core/Src/stm32f1xx_hal_msp.c **** 
  155              		.loc 1 100 5 view .LVU31
  156 0026 9A69     		ldr	r2, [r3, #24]
-ARM GAS  /tmp/ccrzY3dK.s 			page 6
+ARM GAS  /tmp/ccNuhS3K.s 			page 6
 
 
  157 0028 02F48052 		and	r2, r2, #4096
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  195              		.loc 1 111 5 is_stmt 0 view .LVU47
  196 0054 FFF7FEFF 		bl	HAL_GPIO_Init
  197              	.LVL7:
-ARM GAS  /tmp/ccrzY3dK.s 			page 7
+ARM GAS  /tmp/ccNuhS3K.s 			page 7
 
 
  113:Core/Src/stm32f1xx_hal_msp.c ****     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  122:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN SPI1_MspInit 1 */
  237              		.loc 1 122 5 view .LVU63
  238 0082 2320     		movs	r0, #35
-ARM GAS  /tmp/ccrzY3dK.s 			page 8
+ARM GAS  /tmp/ccNuhS3K.s 			page 8
 
 
  239 0084 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  143:Core/Src/stm32f1xx_hal_msp.c ****     /* Peripheral clock disable */
  144:Core/Src/stm32f1xx_hal_msp.c ****     __HAL_RCC_SPI1_CLK_DISABLE();
  145:Core/Src/stm32f1xx_hal_msp.c **** 
-ARM GAS  /tmp/ccrzY3dK.s 			page 9
+ARM GAS  /tmp/ccNuhS3K.s 			page 9
 
 
  146:Core/Src/stm32f1xx_hal_msp.c ****     /**SPI1 GPIO Configuration
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  317              		.thumb_func
  319              	HAL_TIM_Encoder_MspInit:
  320              	.LVL20:
-ARM GAS  /tmp/ccrzY3dK.s 			page 10
+ARM GAS  /tmp/ccNuhS3K.s 			page 10
 
 
  321              	.LFB68:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  188:Core/Src/stm32f1xx_hal_msp.c **** 
  189:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN TIM1_MspInit 1 */
  190:Core/Src/stm32f1xx_hal_msp.c **** 
-ARM GAS  /tmp/ccrzY3dK.s 			page 11
+ARM GAS  /tmp/ccNuhS3K.s 			page 11
 
 
  191:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE END TIM1_MspInit 1 */
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  233:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN TIM4_MspInit 1 */
  234:Core/Src/stm32f1xx_hal_msp.c **** 
  235:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE END TIM4_MspInit 1 */
-ARM GAS  /tmp/ccrzY3dK.s 			page 12
+ARM GAS  /tmp/ccNuhS3K.s 			page 12
 
 
  236:Core/Src/stm32f1xx_hal_msp.c ****   }
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  400              	.LBE9:
  179:Core/Src/stm32f1xx_hal_msp.c ****     /**TIM1 GPIO Configuration
  401              		.loc 1 179 5 view .LVU99
-ARM GAS  /tmp/ccrzY3dK.s 			page 13
+ARM GAS  /tmp/ccNuhS3K.s 			page 13
 
 
  184:Core/Src/stm32f1xx_hal_msp.c ****     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  201:Core/Src/stm32f1xx_hal_msp.c ****     /**TIM3 GPIO Configuration
  441              		.loc 1 201 5 view .LVU115
  442 007a 9B69     		ldr	r3, [r3, #24]
-ARM GAS  /tmp/ccrzY3dK.s 			page 14
+ARM GAS  /tmp/ccNuhS3K.s 			page 14
 
 
  443 007c 03F00403 		and	r3, r3, #4
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  482              	.LBB13:
  223:Core/Src/stm32f1xx_hal_msp.c ****     /**TIM4 GPIO Configuration
  483              		.loc 1 223 5 view .LVU131
-ARM GAS  /tmp/ccrzY3dK.s 			page 15
+ARM GAS  /tmp/ccNuhS3K.s 			page 15
 
 
  223:Core/Src/stm32f1xx_hal_msp.c ****     /**TIM4 GPIO Configuration
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  530              	HAL_TIM_Base_MspInit:
  531              	.LVL31:
  532              	.LFB69:
-ARM GAS  /tmp/ccrzY3dK.s 			page 16
+ARM GAS  /tmp/ccNuhS3K.s 			page 16
 
 
  239:Core/Src/stm32f1xx_hal_msp.c **** 
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  259:Core/Src/stm32f1xx_hal_msp.c **** 
  260:Core/Src/stm32f1xx_hal_msp.c **** }
  566              		.loc 1 260 1 is_stmt 0 view .LVU154
-ARM GAS  /tmp/ccrzY3dK.s 			page 17
+ARM GAS  /tmp/ccNuhS3K.s 			page 17
 
 
  567 0022 02B0     		add	sp, sp, #8
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  272:Core/Src/stm32f1xx_hal_msp.c ****     /**TIM2 GPIO Configuration
  273:Core/Src/stm32f1xx_hal_msp.c ****     PA0-WKUP     ------> TIM2_CH1
  274:Core/Src/stm32f1xx_hal_msp.c ****     PA1     ------> TIM2_CH2
-ARM GAS  /tmp/ccrzY3dK.s 			page 18
+ARM GAS  /tmp/ccNuhS3K.s 			page 18
 
 
  275:Core/Src/stm32f1xx_hal_msp.c ****     PA2     ------> TIM2_CH3
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  278:Core/Src/stm32f1xx_hal_msp.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  644              		.loc 1 278 26 is_stmt 0 view .LVU172
  645 0036 0223     		movs	r3, #2
-ARM GAS  /tmp/ccrzY3dK.s 			page 19
+ARM GAS  /tmp/ccNuhS3K.s 			page 19
 
 
  646 0038 0393     		str	r3, [sp, #12]
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  689              		.loc 1 296 5 view .LVU182
  690 0004 154A     		ldr	r2, .L48
  691 0006 9342     		cmp	r3, r2
-ARM GAS  /tmp/ccrzY3dK.s 			page 20
+ARM GAS  /tmp/ccNuhS3K.s 			page 20
 
 
  692 0008 06D0     		beq	.L45
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  338:Core/Src/stm32f1xx_hal_msp.c ****     __HAL_RCC_TIM4_CLK_DISABLE();
  339:Core/Src/stm32f1xx_hal_msp.c **** 
  340:Core/Src/stm32f1xx_hal_msp.c ****     /**TIM4 GPIO Configuration
-ARM GAS  /tmp/ccrzY3dK.s 			page 21
+ARM GAS  /tmp/ccNuhS3K.s 			page 21
 
 
  341:Core/Src/stm32f1xx_hal_msp.c ****     PB6     ------> TIM4_CH1
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  741 004a D369     		ldr	r3, [r2, #28]
  742 004c 23F00403 		bic	r3, r3, #4
  743 0050 D361     		str	r3, [r2, #28]
-ARM GAS  /tmp/ccrzY3dK.s 			page 22
+ARM GAS  /tmp/ccNuhS3K.s 			page 22
 
 
  344:Core/Src/stm32f1xx_hal_msp.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  364:Core/Src/stm32f1xx_hal_msp.c **** 
  365:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE END TIM2_MspDeInit 0 */
  366:Core/Src/stm32f1xx_hal_msp.c ****     /* Peripheral clock disable */
-ARM GAS  /tmp/ccrzY3dK.s 			page 23
+ARM GAS  /tmp/ccNuhS3K.s 			page 23
 
 
  367:Core/Src/stm32f1xx_hal_msp.c ****     __HAL_RCC_TIM2_CLK_DISABLE();
@@ -1356,34 +1356,34 @@ ARM GAS  /tmp/ccrzY3dK.s 			page 1
  811              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
  812              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
  813              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
-ARM GAS  /tmp/ccrzY3dK.s 			page 24
+ARM GAS  /tmp/ccNuhS3K.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f1xx_hal_msp.c
-     /tmp/ccrzY3dK.s:19     .text.HAL_MspInit:00000000 $t
-     /tmp/ccrzY3dK.s:25     .text.HAL_MspInit:00000000 HAL_MspInit
-     /tmp/ccrzY3dK.s:91     .text.HAL_MspInit:0000003c $d
-     /tmp/ccrzY3dK.s:97     .text.HAL_SPI_MspInit:00000000 $t
-     /tmp/ccrzY3dK.s:103    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-     /tmp/ccrzY3dK.s:246    .text.HAL_SPI_MspInit:0000008c $d
-     /tmp/ccrzY3dK.s:253    .text.HAL_SPI_MspDeInit:00000000 $t
-     /tmp/ccrzY3dK.s:259    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-     /tmp/ccrzY3dK.s:306    .text.HAL_SPI_MspDeInit:00000028 $d
-     /tmp/ccrzY3dK.s:313    .text.HAL_TIM_Encoder_MspInit:00000000 $t
-     /tmp/ccrzY3dK.s:319    .text.HAL_TIM_Encoder_MspInit:00000000 HAL_TIM_Encoder_MspInit
-     /tmp/ccrzY3dK.s:514    .text.HAL_TIM_Encoder_MspInit:000000c8 $d
-     /tmp/ccrzY3dK.s:524    .text.HAL_TIM_Base_MspInit:00000000 $t
-     /tmp/ccrzY3dK.s:530    .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
-     /tmp/ccrzY3dK.s:576    .text.HAL_TIM_MspPostInit:00000000 $t
-     /tmp/ccrzY3dK.s:582    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
-     /tmp/ccrzY3dK.s:662    .text.HAL_TIM_MspPostInit:00000048 $d
-     /tmp/ccrzY3dK.s:667    .text.HAL_TIM_Encoder_MspDeInit:00000000 $t
-     /tmp/ccrzY3dK.s:673    .text.HAL_TIM_Encoder_MspDeInit:00000000 HAL_TIM_Encoder_MspDeInit
-     /tmp/ccrzY3dK.s:756    .text.HAL_TIM_Encoder_MspDeInit:0000005c $d
-     /tmp/ccrzY3dK.s:765    .text.HAL_TIM_Base_MspDeInit:00000000 $t
-     /tmp/ccrzY3dK.s:771    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
-     /tmp/ccrzY3dK.s:799    .text.HAL_TIM_Base_MspDeInit:00000018 $d
+     /tmp/ccNuhS3K.s:19     .text.HAL_MspInit:00000000 $t
+     /tmp/ccNuhS3K.s:25     .text.HAL_MspInit:00000000 HAL_MspInit
+     /tmp/ccNuhS3K.s:91     .text.HAL_MspInit:0000003c $d
+     /tmp/ccNuhS3K.s:97     .text.HAL_SPI_MspInit:00000000 $t
+     /tmp/ccNuhS3K.s:103    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+     /tmp/ccNuhS3K.s:246    .text.HAL_SPI_MspInit:0000008c $d
+     /tmp/ccNuhS3K.s:253    .text.HAL_SPI_MspDeInit:00000000 $t
+     /tmp/ccNuhS3K.s:259    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+     /tmp/ccNuhS3K.s:306    .text.HAL_SPI_MspDeInit:00000028 $d
+     /tmp/ccNuhS3K.s:313    .text.HAL_TIM_Encoder_MspInit:00000000 $t
+     /tmp/ccNuhS3K.s:319    .text.HAL_TIM_Encoder_MspInit:00000000 HAL_TIM_Encoder_MspInit
+     /tmp/ccNuhS3K.s:514    .text.HAL_TIM_Encoder_MspInit:000000c8 $d
+     /tmp/ccNuhS3K.s:524    .text.HAL_TIM_Base_MspInit:00000000 $t
+     /tmp/ccNuhS3K.s:530    .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
+     /tmp/ccNuhS3K.s:576    .text.HAL_TIM_MspPostInit:00000000 $t
+     /tmp/ccNuhS3K.s:582    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
+     /tmp/ccNuhS3K.s:662    .text.HAL_TIM_MspPostInit:00000048 $d
+     /tmp/ccNuhS3K.s:667    .text.HAL_TIM_Encoder_MspDeInit:00000000 $t
+     /tmp/ccNuhS3K.s:673    .text.HAL_TIM_Encoder_MspDeInit:00000000 HAL_TIM_Encoder_MspDeInit
+     /tmp/ccNuhS3K.s:756    .text.HAL_TIM_Encoder_MspDeInit:0000005c $d
+     /tmp/ccNuhS3K.s:765    .text.HAL_TIM_Base_MspDeInit:00000000 $t
+     /tmp/ccNuhS3K.s:771    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
+     /tmp/ccNuhS3K.s:799    .text.HAL_TIM_Base_MspDeInit:00000018 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init

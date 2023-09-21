@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "auto_park.h"
 
 /* USER CODE END Includes */
 
@@ -48,6 +49,7 @@ TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 
 /* USER CODE BEGIN PV */
+MACHINE machine;
 
 /* USER CODE END PV */
 
@@ -60,7 +62,29 @@ static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_SPI1_Init(void);
 /* USER CODE BEGIN PFP */
+void auto_park_init(void)
+{
+	// Init value for pid of motor
+	machine.up.pid.kp = 1;
+	machine.up.pid.ki = 0.001;
+	machine.up.pid.kd = 0.1;
+	machine.up.pid.ERROR = 2;
 
+	machine.roll.pid.kp = 1;
+	machine.roll.pid.ki = 0.001;
+	machine.roll.pid.kd = 0.1;
+	machine.roll.pid.ERROR = 2;
+
+	machine.out.pid.kp = 1;
+	machine.out.pid.ki = 0.001;
+	machine.out.pid.kd = 0.1;
+	machine.out.pid.ERROR = 2;
+
+	// Init pin for motor
+	
+	// Init other value of machine
+	machine.mode = 0; // mode idle disconnect
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -103,6 +127,7 @@ int main(void)
   MX_SPI1_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
+  auto_park_init();
 
   /* USER CODE END 2 */
 
@@ -110,6 +135,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  process_mode(&machine);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -482,7 +508,7 @@ void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+   *  example: printf ("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */

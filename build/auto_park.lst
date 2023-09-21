@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccbSAKZJ.s 			page 1
+ARM GAS  /tmp/ccfKZUqS.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,86 +18,1150 @@ ARM GAS  /tmp/ccbSAKZJ.s 			page 1
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
   17              		.file 1 "lib/auto_park.c"
-  18              		.section	.text.readEncode,"ax",%progbits
-  19              		.align	1
-  20              		.global	readEncode
-  21              		.syntax unified
-  22              		.thumb
-  23              		.thumb_func
-  25              	readEncode:
-  26              	.LVL0:
-  27              	.LFB0:
+  18              		.global	__aeabi_fcmpgt
+  19              		.global	__aeabi_fcmplt
+  20              		.global	__aeabi_fsub
+  21              		.global	__aeabi_f2uiz
+  22              		.global	__aeabi_fcmpeq
+  23              		.section	.text.PWM,"ax",%progbits
+  24              		.align	1
+  25              		.global	PWM
+  26              		.syntax unified
+  27              		.thumb
+  28              		.thumb_func
+  30              	PWM:
+  31              	.LVL0:
+  32              	.LFB68:
    1:lib/auto_park.c **** #include "auto_park.h"
    2:lib/auto_park.c **** 
-   3:lib/auto_park.c **** void readEncode(MOTOR *motor)
+   3:lib/auto_park.c **** void PWM(MOTOR *motor)
    4:lib/auto_park.c **** {
-  28              		.loc 1 4 1 view -0
-  29              		.cfi_startproc
-  30              		@ args = 0, pretend = 0, frame = 0
-  31              		@ frame_needed = 0, uses_anonymous_args = 0
-  32              		@ link register save eliminated.
-   5:lib/auto_park.c **** 	
-   6:lib/auto_park.c **** }
-  33              		.loc 1 6 1 view .LVU1
-  34 0000 7047     		bx	lr
-  35              		.cfi_endproc
-  36              	.LFE0:
-  38              		.section	.text.move,"ax",%progbits
-  39              		.align	1
-  40              		.global	move
-  41              		.syntax unified
-  42              		.thumb
-  43              		.thumb_func
-  45              	move:
-  46              	.LVL1:
-  47              	.LFB1:
-   7:lib/auto_park.c **** 
-   8:lib/auto_park.c **** void move(MOTOR *motor)
-   9:lib/auto_park.c **** {
-  48              		.loc 1 9 1 view -0
-  49              		.cfi_startproc
-  50              		@ args = 0, pretend = 0, frame = 0
-  51              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccbSAKZJ.s 			page 2
+  33              		.loc 1 4 1 view -0
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 0, uses_anonymous_args = 0
+  37              		.loc 1 4 1 is_stmt 0 view .LVU1
+  38 0000 38B5     		push	{r3, r4, r5, lr}
+  39              	.LCFI0:
+  40              		.cfi_def_cfa_offset 16
+  41              		.cfi_offset 3, -16
+  42              		.cfi_offset 4, -12
+  43              		.cfi_offset 5, -8
+  44              		.cfi_offset 14, -4
+  45 0002 0446     		mov	r4, r0
+   5:lib/auto_park.c **** 	float duty = motor->pid.pwm;
+  46              		.loc 1 5 2 is_stmt 1 view .LVU2
+  47              		.loc 1 5 8 is_stmt 0 view .LVU3
+  48 0004 C569     		ldr	r5, [r0, #28]	@ float
+  49              	.LVL1:
+   6:lib/auto_park.c **** 	if (duty > 100) duty = 100;
+  50              		.loc 1 6 2 is_stmt 1 view .LVU4
+  51              		.loc 1 6 5 is_stmt 0 view .LVU5
+  52 0006 4A49     		ldr	r1, .L33
+ARM GAS  /tmp/ccfKZUqS.s 			page 2
 
 
-  52              		@ link register save eliminated.
-  10:lib/auto_park.c **** 	if( !motor->pid.process_flag )
-  53              		.loc 1 10 2 view .LVU3
-  54              		.loc 1 10 17 is_stmt 0 view .LVU4
-  55 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
-  56              		.loc 1 10 4 view .LVU5
-  57 0004 13B9     		cbnz	r3, .L2
-  11:lib/auto_park.c **** 	{
-  12:lib/auto_park.c **** 		motor->pid.process_flag = true;
-  58              		.loc 1 12 3 is_stmt 1 view .LVU6
-  59              		.loc 1 12 27 is_stmt 0 view .LVU7
-  60 0006 0123     		movs	r3, #1
-  61 0008 80F82030 		strb	r3, [r0, #32]
+  53 0008 2846     		mov	r0, r5
+  54              	.LVL2:
+  55              		.loc 1 6 5 view .LVU6
+  56 000a FFF7FEFF 		bl	__aeabi_fcmpgt
+  57              	.LVL3:
+  58 000e 58B9     		cbnz	r0, .L21
+   7:lib/auto_park.c **** 	else if (duty < -100) duty = -100;
+  59              		.loc 1 7 7 is_stmt 1 view .LVU7
+  60              		.loc 1 7 10 is_stmt 0 view .LVU8
+  61 0010 4849     		ldr	r1, .L33+4
+  62 0012 2846     		mov	r0, r5
+  63 0014 FFF7FEFF 		bl	__aeabi_fcmplt
+  64              	.LVL4:
+  65 0018 0028     		cmp	r0, #0
+  66 001a 39D1     		bne	.L22
+   8:lib/auto_park.c **** 
+   9:lib/auto_park.c **** 	if(duty > 0)
+  67              		.loc 1 9 2 is_stmt 1 view .LVU9
+  68              		.loc 1 9 4 is_stmt 0 view .LVU10
+  69 001c 0021     		movs	r1, #0
+  70 001e 2846     		mov	r0, r5
+  71 0020 FFF7FEFF 		bl	__aeabi_fcmpgt
+  72              	.LVL5:
+  73 0024 08B9     		cbnz	r0, .L2
+  74 0026 34E0     		b	.L3
+  75              	.L21:
+   6:lib/auto_park.c **** 	else if (duty < -100) duty = -100;
+  76              		.loc 1 6 23 discriminator 1 view .LVU11
+  77 0028 414D     		ldr	r5, .L33
+  78              	.LVL6:
+  79              	.L2:
+  10:lib/auto_park.c **** 	{
+  11:lib/auto_park.c **** 		__HAL_TIM_SetCompare(motor->pin.htim, motor->pin.channel, 100 - duty);
+  80              		.loc 1 11 3 is_stmt 1 view .LVU12
+  81 002a 636B     		ldr	r3, [r4, #52]
+  82 002c 73B9     		cbnz	r3, .L5
+  83              		.loc 1 11 3 is_stmt 0 discriminator 1 view .LVU13
+  84 002e 2946     		mov	r1, r5
+  85 0030 3F48     		ldr	r0, .L33
+  86 0032 FFF7FEFF 		bl	__aeabi_fsub
+  87              	.LVL7:
+  88 0036 E36B     		ldr	r3, [r4, #60]
+  89 0038 1D68     		ldr	r5, [r3]
+  90 003a FFF7FEFF 		bl	__aeabi_f2uiz
+  91              	.LVL8:
+  92 003e 6863     		str	r0, [r5, #52]
+  93              	.L6:
+  12:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 1);
+  94              		.loc 1 12 3 is_stmt 1 view .LVU14
+  95 0040 0122     		movs	r2, #1
+  96 0042 218F     		ldrh	r1, [r4, #56]
+  97 0044 206C     		ldr	r0, [r4, #64]
+  98 0046 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  99              	.LVL9:
+ 100              	.L1:
   13:lib/auto_park.c **** 	}
-  14:lib/auto_park.c **** 	if( motor->pid.sample_flag )
-  62              		.loc 1 14 2 is_stmt 1 view .LVU8
+  14:lib/auto_park.c **** 	else if(duty == 0)
+ARM GAS  /tmp/ccfKZUqS.s 			page 3
+
+
   15:lib/auto_park.c **** 	{
-  16:lib/auto_park.c **** 		
+  16:lib/auto_park.c **** 		__HAL_TIM_SetCompare(motor->pin.htim, motor->pin.channel, 0);
+  17:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+  18:lib/auto_park.c **** 	}
+  19:lib/auto_park.c **** 	else if(duty < 0)
+  20:lib/auto_park.c **** 	{
+  21:lib/auto_park.c **** 		duty *= -1;
+  22:lib/auto_park.c **** 		__HAL_TIM_SetCompare(motor->pin.htim, motor->pin.channel, duty);
+  23:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+  24:lib/auto_park.c **** 	}
+  25:lib/auto_park.c **** }
+ 101              		.loc 1 25 1 is_stmt 0 view .LVU15
+ 102 004a 38BD     		pop	{r3, r4, r5, pc}
+ 103              	.LVL10:
+ 104              	.L5:
+  11:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 1);
+ 105              		.loc 1 11 3 discriminator 2 view .LVU16
+ 106 004c 042B     		cmp	r3, #4
+ 107 004e 0BD0     		beq	.L27
+  11:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 1);
+ 108              		.loc 1 11 3 discriminator 4 view .LVU17
+ 109 0050 082B     		cmp	r3, #8
+ 110 0052 13D0     		beq	.L28
+  11:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 1);
+ 111              		.loc 1 11 3 discriminator 7 view .LVU18
+ 112 0054 2946     		mov	r1, r5
+ 113 0056 3648     		ldr	r0, .L33
+ 114 0058 FFF7FEFF 		bl	__aeabi_fsub
+ 115              	.LVL11:
+ 116 005c E36B     		ldr	r3, [r4, #60]
+ 117 005e 1D68     		ldr	r5, [r3]
+ 118 0060 FFF7FEFF 		bl	__aeabi_f2uiz
+ 119              	.LVL12:
+ 120 0064 2864     		str	r0, [r5, #64]
+ 121 0066 EBE7     		b	.L6
+ 122              	.L27:
+  11:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 1);
+ 123              		.loc 1 11 3 discriminator 3 view .LVU19
+ 124 0068 2946     		mov	r1, r5
+ 125 006a 3148     		ldr	r0, .L33
+ 126 006c FFF7FEFF 		bl	__aeabi_fsub
+ 127              	.LVL13:
+ 128 0070 E36B     		ldr	r3, [r4, #60]
+ 129 0072 1D68     		ldr	r5, [r3]
+ 130 0074 FFF7FEFF 		bl	__aeabi_f2uiz
+ 131              	.LVL14:
+ 132 0078 A863     		str	r0, [r5, #56]
+ 133 007a E1E7     		b	.L6
+ 134              	.L28:
+  11:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 1);
+ 135              		.loc 1 11 3 discriminator 6 view .LVU20
+ 136 007c 2946     		mov	r1, r5
+ 137 007e 2C48     		ldr	r0, .L33
+ 138 0080 FFF7FEFF 		bl	__aeabi_fsub
+ 139              	.LVL15:
+ 140 0084 E36B     		ldr	r3, [r4, #60]
+ 141 0086 1D68     		ldr	r5, [r3]
+ARM GAS  /tmp/ccfKZUqS.s 			page 4
+
+
+ 142 0088 FFF7FEFF 		bl	__aeabi_f2uiz
+ 143              	.LVL16:
+ 144 008c E863     		str	r0, [r5, #60]
+ 145 008e D7E7     		b	.L6
+ 146              	.LVL17:
+ 147              	.L22:
+   7:lib/auto_park.c **** 
+ 148              		.loc 1 7 29 discriminator 1 view .LVU21
+ 149 0090 284D     		ldr	r5, .L33+4
+ 150              	.LVL18:
+ 151              	.L3:
+  14:lib/auto_park.c **** 	{
+ 152              		.loc 1 14 7 is_stmt 1 view .LVU22
+  14:lib/auto_park.c **** 	{
+ 153              		.loc 1 14 9 is_stmt 0 view .LVU23
+ 154 0092 0021     		movs	r1, #0
+ 155 0094 2846     		mov	r0, r5
+ 156 0096 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 157              	.LVL19:
+ 158 009a F0B1     		cbz	r0, .L25
+  16:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 159              		.loc 1 16 3 is_stmt 1 view .LVU24
+ 160 009c 636B     		ldr	r3, [r4, #52]
+ 161 009e 4BB9     		cbnz	r3, .L12
+  16:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 162              		.loc 1 16 3 is_stmt 0 discriminator 1 view .LVU25
+ 163 00a0 E36B     		ldr	r3, [r4, #60]
+ 164 00a2 1B68     		ldr	r3, [r3]
+ 165 00a4 0022     		movs	r2, #0
+ 166 00a6 5A63     		str	r2, [r3, #52]
+ 167              	.L13:
   17:lib/auto_park.c **** 	}
-  63              		.loc 1 17 2 view .LVU9
-  64              	.L2:
-  18:lib/auto_park.c **** }
-  65              		.loc 1 18 1 is_stmt 0 view .LVU10
-  66 000c 7047     		bx	lr
-  67              		.cfi_endproc
-  68              	.LFE1:
-  70              		.text
-  71              	.Letext0:
-  72              		.file 2 "lib/auto_park.h"
-ARM GAS  /tmp/ccbSAKZJ.s 			page 3
+ 168              		.loc 1 17 3 is_stmt 1 view .LVU26
+ 169 00a8 0022     		movs	r2, #0
+ 170 00aa 218F     		ldrh	r1, [r4, #56]
+ 171 00ac 206C     		ldr	r0, [r4, #64]
+ 172 00ae FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 173              	.LVL20:
+ 174 00b2 CAE7     		b	.L1
+ 175              	.L12:
+  16:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 176              		.loc 1 16 3 is_stmt 0 discriminator 2 view .LVU27
+ 177 00b4 042B     		cmp	r3, #4
+ 178 00b6 06D0     		beq	.L29
+  16:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 179              		.loc 1 16 3 discriminator 4 view .LVU28
+ 180 00b8 082B     		cmp	r3, #8
+ 181 00ba 09D0     		beq	.L30
+  16:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 182              		.loc 1 16 3 discriminator 7 view .LVU29
+ 183 00bc E36B     		ldr	r3, [r4, #60]
+ 184 00be 1B68     		ldr	r3, [r3]
+ 185 00c0 0022     		movs	r2, #0
+ 186 00c2 1A64     		str	r2, [r3, #64]
+ 187 00c4 F0E7     		b	.L13
+ 188              	.L29:
+  16:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ARM GAS  /tmp/ccfKZUqS.s 			page 5
+
+
+ 189              		.loc 1 16 3 discriminator 3 view .LVU30
+ 190 00c6 E36B     		ldr	r3, [r4, #60]
+ 191 00c8 1B68     		ldr	r3, [r3]
+ 192 00ca 0022     		movs	r2, #0
+ 193 00cc 9A63     		str	r2, [r3, #56]
+ 194 00ce EBE7     		b	.L13
+ 195              	.L30:
+  16:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 196              		.loc 1 16 3 discriminator 6 view .LVU31
+ 197 00d0 E36B     		ldr	r3, [r4, #60]
+ 198 00d2 1B68     		ldr	r3, [r3]
+ 199 00d4 0022     		movs	r2, #0
+ 200 00d6 DA63     		str	r2, [r3, #60]
+ 201 00d8 E6E7     		b	.L13
+ 202              	.L25:
+  19:lib/auto_park.c **** 	{
+ 203              		.loc 1 19 7 is_stmt 1 view .LVU32
+  19:lib/auto_park.c **** 	{
+ 204              		.loc 1 19 9 is_stmt 0 view .LVU33
+ 205 00da 0021     		movs	r1, #0
+ 206 00dc 2846     		mov	r0, r5
+ 207 00de FFF7FEFF 		bl	__aeabi_fcmplt
+ 208              	.LVL21:
+ 209 00e2 0028     		cmp	r0, #0
+ 210 00e4 B1D0     		beq	.L1
+  21:lib/auto_park.c **** 		__HAL_TIM_SetCompare(motor->pin.htim, motor->pin.channel, duty);
+ 211              		.loc 1 21 3 is_stmt 1 view .LVU34
+  21:lib/auto_park.c **** 		__HAL_TIM_SetCompare(motor->pin.htim, motor->pin.channel, duty);
+ 212              		.loc 1 21 8 is_stmt 0 view .LVU35
+ 213 00e6 05F10040 		add	r0, r5, #-2147483648
+ 214              	.LVL22:
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 215              		.loc 1 22 3 is_stmt 1 view .LVU36
+ 216 00ea 636B     		ldr	r3, [r4, #52]
+ 217 00ec 53B9     		cbnz	r3, .L17
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 218              		.loc 1 22 3 is_stmt 0 discriminator 1 view .LVU37
+ 219 00ee E36B     		ldr	r3, [r4, #60]
+ 220 00f0 1D68     		ldr	r5, [r3]
+ 221 00f2 FFF7FEFF 		bl	__aeabi_f2uiz
+ 222              	.LVL23:
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 223              		.loc 1 22 3 discriminator 1 view .LVU38
+ 224 00f6 6863     		str	r0, [r5, #52]
+ 225              	.L18:
+  23:lib/auto_park.c **** 	}
+ 226              		.loc 1 23 3 is_stmt 1 view .LVU39
+ 227 00f8 0022     		movs	r2, #0
+ 228 00fa 218F     		ldrh	r1, [r4, #56]
+ 229 00fc 206C     		ldr	r0, [r4, #64]
+ 230 00fe FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 231              	.LVL24:
+ 232              		.loc 1 25 1 is_stmt 0 view .LVU40
+ 233 0102 A2E7     		b	.L1
+ 234              	.LVL25:
+ 235              	.L17:
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ARM GAS  /tmp/ccfKZUqS.s 			page 6
+
+
+ 236              		.loc 1 22 3 discriminator 2 view .LVU41
+ 237 0104 042B     		cmp	r3, #4
+ 238 0106 07D0     		beq	.L31
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 239              		.loc 1 22 3 discriminator 4 view .LVU42
+ 240 0108 082B     		cmp	r3, #8
+ 241 010a 0BD0     		beq	.L32
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 242              		.loc 1 22 3 discriminator 7 view .LVU43
+ 243 010c E36B     		ldr	r3, [r4, #60]
+ 244 010e 1D68     		ldr	r5, [r3]
+ 245 0110 FFF7FEFF 		bl	__aeabi_f2uiz
+ 246              	.LVL26:
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 247              		.loc 1 22 3 discriminator 7 view .LVU44
+ 248 0114 2864     		str	r0, [r5, #64]
+ 249 0116 EFE7     		b	.L18
+ 250              	.LVL27:
+ 251              	.L31:
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 252              		.loc 1 22 3 discriminator 3 view .LVU45
+ 253 0118 E36B     		ldr	r3, [r4, #60]
+ 254 011a 1D68     		ldr	r5, [r3]
+ 255 011c FFF7FEFF 		bl	__aeabi_f2uiz
+ 256              	.LVL28:
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 257              		.loc 1 22 3 discriminator 3 view .LVU46
+ 258 0120 A863     		str	r0, [r5, #56]
+ 259 0122 E9E7     		b	.L18
+ 260              	.LVL29:
+ 261              	.L32:
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 262              		.loc 1 22 3 discriminator 6 view .LVU47
+ 263 0124 E36B     		ldr	r3, [r4, #60]
+ 264 0126 1D68     		ldr	r5, [r3]
+ 265 0128 FFF7FEFF 		bl	__aeabi_f2uiz
+ 266              	.LVL30:
+  22:lib/auto_park.c **** 		HAL_GPIO_WritePin(motor->pin.gpio_dir, motor->pin.dir, 0);
+ 267              		.loc 1 22 3 discriminator 6 view .LVU48
+ 268 012c E863     		str	r0, [r5, #60]
+ 269 012e E3E7     		b	.L18
+ 270              	.L34:
+ 271              		.align	2
+ 272              	.L33:
+ 273 0130 0000C842 		.word	1120403456
+ 274 0134 0000C8C2 		.word	-1027080192
+ 275              		.cfi_endproc
+ 276              	.LFE68:
+ 278              		.section	.text.readEncoder,"ax",%progbits
+ 279              		.align	1
+ 280              		.global	readEncoder
+ 281              		.syntax unified
+ 282              		.thumb
+ 283              		.thumb_func
+ 285              	readEncoder:
+ 286              	.LVL31:
+ 287              	.LFB69:
+ARM GAS  /tmp/ccfKZUqS.s 			page 7
+
+
+  26:lib/auto_park.c **** 
+  27:lib/auto_park.c **** void readEncoder(MOTOR *motor)
+  28:lib/auto_park.c **** {
+ 288              		.loc 1 28 1 is_stmt 1 view -0
+ 289              		.cfi_startproc
+ 290              		@ args = 0, pretend = 0, frame = 0
+ 291              		@ frame_needed = 0, uses_anonymous_args = 0
+ 292              		@ link register save eliminated.
+  29:lib/auto_park.c **** 	motor->pid.pos += (int16_t)*motor->pin.enc;
+ 293              		.loc 1 29 2 view .LVU50
+ 294              		.loc 1 29 12 is_stmt 0 view .LVU51
+ 295 0000 0368     		ldr	r3, [r0]
+ 296              		.loc 1 29 40 view .LVU52
+ 297 0002 026B     		ldr	r2, [r0, #48]
+ 298              		.loc 1 29 20 view .LVU53
+ 299 0004 B2F90010 		ldrsh	r1, [r2]
+ 300              		.loc 1 29 17 view .LVU54
+ 301 0008 0B44     		add	r3, r3, r1
+ 302 000a 0360     		str	r3, [r0]
+  30:lib/auto_park.c **** 	*motor->pin.enc = 0;
+ 303              		.loc 1 30 2 is_stmt 1 view .LVU55
+ 304              		.loc 1 30 18 is_stmt 0 view .LVU56
+ 305 000c 0023     		movs	r3, #0
+ 306 000e 1360     		str	r3, [r2]
+  31:lib/auto_park.c **** }
+ 307              		.loc 1 31 1 view .LVU57
+ 308 0010 7047     		bx	lr
+ 309              		.cfi_endproc
+ 310              	.LFE69:
+ 312              		.global	__aeabi_f2d
+ 313              		.global	__aeabi_i2d
+ 314              		.global	__aeabi_dmul
+ 315              		.global	__aeabi_dadd
+ 316              		.global	__aeabi_d2f
+ 317              		.global	__aeabi_i2f
+ 318              		.global	__aeabi_fmul
+ 319              		.global	__aeabi_fadd
+ 320              		.global	__aeabi_ddiv
+ 321              		.section	.text.PID_control,"ax",%progbits
+ 322              		.align	1
+ 323              		.global	PID_control
+ 324              		.syntax unified
+ 325              		.thumb
+ 326              		.thumb_func
+ 328              	PID_control:
+ 329              	.LVL32:
+ 330              	.LFB70:
+  32:lib/auto_park.c **** 
+  33:lib/auto_park.c **** 
+  34:lib/auto_park.c **** void PID_control(MOTOR *motor)
+  35:lib/auto_park.c **** {
+ 331              		.loc 1 35 1 is_stmt 1 view -0
+ 332              		.cfi_startproc
+ 333              		@ args = 0, pretend = 0, frame = 0
+ 334              		@ frame_needed = 0, uses_anonymous_args = 0
+ 335              		.loc 1 35 1 is_stmt 0 view .LVU59
+ 336 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ARM GAS  /tmp/ccfKZUqS.s 			page 8
+
+
+ 337              	.LCFI1:
+ 338              		.cfi_def_cfa_offset 24
+ 339              		.cfi_offset 4, -24
+ 340              		.cfi_offset 5, -20
+ 341              		.cfi_offset 6, -16
+ 342              		.cfi_offset 7, -12
+ 343              		.cfi_offset 8, -8
+ 344              		.cfi_offset 14, -4
+ 345 0004 0446     		mov	r4, r0
+  36:lib/auto_park.c **** 	int e;
+ 346              		.loc 1 36 2 is_stmt 1 view .LVU60
+  37:lib/auto_park.c **** 	e = motor->pid.setpoint - motor->pid.pos;
+ 347              		.loc 1 37 2 view .LVU61
+ 348              		.loc 1 37 16 is_stmt 0 view .LVU62
+ 349 0006 8569     		ldr	r5, [r0, #24]
+ 350              		.loc 1 37 38 view .LVU63
+ 351 0008 0368     		ldr	r3, [r0]
+ 352              		.loc 1 37 4 view .LVU64
+ 353 000a ED1A     		subs	r5, r5, r3
+ 354              	.LVL33:
+  38:lib/auto_park.c **** 	motor->pid.I_part += e*TS;
+ 355              		.loc 1 38 2 is_stmt 1 view .LVU65
+ 356              		.loc 1 38 12 is_stmt 0 view .LVU66
+ 357 000c 0069     		ldr	r0, [r0, #16]	@ float
+ 358              	.LVL34:
+ 359              		.loc 1 38 12 view .LVU67
+ 360 000e FFF7FEFF 		bl	__aeabi_f2d
+ 361              	.LVL35:
+ 362 0012 0646     		mov	r6, r0
+ 363 0014 0F46     		mov	r7, r1
+ 364              		.loc 1 38 24 view .LVU68
+ 365 0016 2846     		mov	r0, r5
+ 366 0018 FFF7FEFF 		bl	__aeabi_i2d
+ 367              	.LVL36:
+ 368 001c 26A3     		adr	r3, .L39
+ 369 001e D3E90023 		ldrd	r2, [r3]
+ 370 0022 FFF7FEFF 		bl	__aeabi_dmul
+ 371              	.LVL37:
+ 372 0026 0246     		mov	r2, r0
+ 373 0028 0B46     		mov	r3, r1
+ 374              		.loc 1 38 20 view .LVU69
+ 375 002a 3046     		mov	r0, r6
+ 376 002c 3946     		mov	r1, r7
+ 377 002e FFF7FEFF 		bl	__aeabi_dadd
+ 378              	.LVL38:
+ 379 0032 FFF7FEFF 		bl	__aeabi_d2f
+ 380              	.LVL39:
+ 381 0036 0646     		mov	r6, r0
+ 382 0038 2061     		str	r0, [r4, #16]	@ float
+  39:lib/auto_park.c **** 	motor->pid.pwm = motor->pid.kp*e + motor->pid.ki*motor->pid.I_part + motor->pid.kd*(e - motor->pid
+ 383              		.loc 1 39 2 is_stmt 1 view .LVU70
+ 384              		.loc 1 39 29 is_stmt 0 view .LVU71
+ 385 003a 6768     		ldr	r7, [r4, #4]	@ float
+ 386              		.loc 1 39 32 view .LVU72
+ 387 003c 2846     		mov	r0, r5
+ 388 003e FFF7FEFF 		bl	__aeabi_i2f
+ 389              	.LVL40:
+ARM GAS  /tmp/ccfKZUqS.s 			page 9
+
+
+ 390 0042 3946     		mov	r1, r7
+ 391 0044 FFF7FEFF 		bl	__aeabi_fmul
+ 392              	.LVL41:
+ 393 0048 0746     		mov	r7, r0
+ 394              		.loc 1 39 50 view .LVU73
+ 395 004a A168     		ldr	r1, [r4, #8]	@ float
+ 396 004c 3046     		mov	r0, r6
+ 397 004e FFF7FEFF 		bl	__aeabi_fmul
+ 398              	.LVL42:
+ 399 0052 0146     		mov	r1, r0
+ 400              		.loc 1 39 35 view .LVU74
+ 401 0054 3846     		mov	r0, r7
+ 402 0056 FFF7FEFF 		bl	__aeabi_fadd
+ 403              	.LVL43:
+ 404 005a FFF7FEFF 		bl	__aeabi_f2d
+ 405              	.LVL44:
+ 406 005e 0646     		mov	r6, r0
+ 407 0060 0F46     		mov	r7, r1
+ 408              		.loc 1 39 81 view .LVU75
+ 409 0062 D4F80C80 		ldr	r8, [r4, #12]	@ float
+ 410              		.loc 1 39 100 view .LVU76
+ 411 0066 6069     		ldr	r0, [r4, #20]
+ 412              		.loc 1 39 84 view .LVU77
+ 413 0068 281A     		subs	r0, r5, r0
+ 414 006a FFF7FEFF 		bl	__aeabi_i2f
+ 415              	.LVL45:
+ 416 006e 4146     		mov	r1, r8
+ 417 0070 FFF7FEFF 		bl	__aeabi_fmul
+ 418              	.LVL46:
+ 419 0074 FFF7FEFF 		bl	__aeabi_f2d
+ 420              	.LVL47:
+ 421              		.loc 1 39 110 view .LVU78
+ 422 0078 0FA3     		adr	r3, .L39
+ 423 007a D3E90023 		ldrd	r2, [r3]
+ 424 007e FFF7FEFF 		bl	__aeabi_ddiv
+ 425              	.LVL48:
+ 426 0082 0246     		mov	r2, r0
+ 427 0084 0B46     		mov	r3, r1
+ 428              		.loc 1 39 69 view .LVU79
+ 429 0086 3046     		mov	r0, r6
+ 430 0088 3946     		mov	r1, r7
+ 431 008a FFF7FEFF 		bl	__aeabi_dadd
+ 432              	.LVL49:
+ 433 008e FFF7FEFF 		bl	__aeabi_d2f
+ 434              	.LVL50:
+ 435              		.loc 1 39 17 view .LVU80
+ 436 0092 E061     		str	r0, [r4, #28]	@ float
+  40:lib/auto_park.c **** 	motor->pid.erro_pre = e;
+ 437              		.loc 1 40 2 is_stmt 1 view .LVU81
+ 438              		.loc 1 40 22 is_stmt 0 view .LVU82
+ 439 0094 6561     		str	r5, [r4, #20]
+  41:lib/auto_park.c **** 	if(abs(e) < motor->pid.ERROR)
+ 440              		.loc 1 41 2 is_stmt 1 view .LVU83
+ 441              		.loc 1 41 5 is_stmt 0 view .LVU84
+ 442 0096 002D     		cmp	r5, #0
+ 443 0098 B8BF     		it	lt
+ 444 009a 6D42     		rsblt	r5, r5, #0
+ARM GAS  /tmp/ccfKZUqS.s 			page 10
+
+
+ 445              	.LVL51:
+ 446              		.loc 1 41 24 view .LVU85
+ 447 009c 236A     		ldr	r3, [r4, #32]
+ 448              		.loc 1 41 4 view .LVU86
+ 449 009e 9D42     		cmp	r5, r3
+ 450 00a0 06DA     		bge	.L36
+  42:lib/auto_park.c **** 	{
+  43:lib/auto_park.c **** 		motor->pid.finish_flag = true;
+ 451              		.loc 1 43 3 is_stmt 1 view .LVU87
+ 452              		.loc 1 43 26 is_stmt 0 view .LVU88
+ 453 00a2 0123     		movs	r3, #1
+ 454 00a4 84F82C30 		strb	r3, [r4, #44]
+  44:lib/auto_park.c **** 		motor->pid.pwm = 0;
+ 455              		.loc 1 44 3 is_stmt 1 view .LVU89
+ 456              		.loc 1 44 18 is_stmt 0 view .LVU90
+ 457 00a8 0023     		movs	r3, #0
+ 458 00aa E361     		str	r3, [r4, #28]	@ float
+  45:lib/auto_park.c **** 		motor->pid.erro_pre = 0;
+ 459              		.loc 1 45 3 is_stmt 1 view .LVU91
+ 460              		.loc 1 45 23 is_stmt 0 view .LVU92
+ 461 00ac 0023     		movs	r3, #0
+ 462 00ae 6361     		str	r3, [r4, #20]
+ 463              	.LVL52:
+ 464              	.L36:
+  46:lib/auto_park.c **** 	}
+  47:lib/auto_park.c **** }
+ 465              		.loc 1 47 1 view .LVU93
+ 466 00b0 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 467              	.LVL53:
+ 468              	.L40:
+ 469              		.loc 1 47 1 view .LVU94
+ 470 00b4 AFF30080 		.align	3
+ 471              	.L39:
+ 472 00b8 FA7E6ABC 		.word	-1133871366
+ 473 00bc 7493683F 		.word	1063818100
+ 474              		.cfi_endproc
+ 475              	.LFE70:
+ 477              		.section	.text.home,"ax",%progbits
+ 478              		.align	1
+ 479              		.global	home
+ 480              		.syntax unified
+ 481              		.thumb
+ 482              		.thumb_func
+ 484              	home:
+ 485              	.LVL54:
+ 486              	.LFB71:
+  48:lib/auto_park.c **** 
+  49:lib/auto_park.c **** void home(MOTOR *motor)
+  50:lib/auto_park.c **** {
+ 487              		.loc 1 50 1 is_stmt 1 view -0
+ 488              		.cfi_startproc
+ 489              		@ args = 0, pretend = 0, frame = 0
+ 490              		@ frame_needed = 0, uses_anonymous_args = 0
+ 491              		.loc 1 50 1 is_stmt 0 view .LVU96
+ 492 0000 10B5     		push	{r4, lr}
+ 493              	.LCFI2:
+ 494              		.cfi_def_cfa_offset 8
+ARM GAS  /tmp/ccfKZUqS.s 			page 11
+
+
+ 495              		.cfi_offset 4, -8
+ 496              		.cfi_offset 14, -4
+ 497 0002 0446     		mov	r4, r0
+  51:lib/auto_park.c **** 	if(HAL_GPIO_ReadPin(motor->pin.gpio_home, motor->pin.home) == 1)
+ 498              		.loc 1 51 2 is_stmt 1 view .LVU97
+ 499              		.loc 1 51 5 is_stmt 0 view .LVU98
+ 500 0004 B0F84810 		ldrh	r1, [r0, #72]
+ 501 0008 406C     		ldr	r0, [r0, #68]
+ 502              	.LVL55:
+ 503              		.loc 1 51 5 view .LVU99
+ 504 000a FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 505              	.LVL56:
+ 506              		.loc 1 51 4 discriminator 1 view .LVU100
+ 507 000e 0128     		cmp	r0, #1
+ 508 0010 08D0     		beq	.L45
+  52:lib/auto_park.c **** 	{
+  53:lib/auto_park.c **** 		motor->pid.pwm = -1;
+  54:lib/auto_park.c **** 		PWM(motor);
+  55:lib/auto_park.c **** 		motor->pid.home_flag = false;
+  56:lib/auto_park.c **** 	}
+  57:lib/auto_park.c **** 	else
+  58:lib/auto_park.c **** 	{
+  59:lib/auto_park.c **** 		motor->pid.pwm = 0;
+ 509              		.loc 1 59 3 is_stmt 1 view .LVU101
+ 510              		.loc 1 59 18 is_stmt 0 view .LVU102
+ 511 0012 0023     		movs	r3, #0
+ 512 0014 E361     		str	r3, [r4, #28]	@ float
+  60:lib/auto_park.c **** 		PWM(motor);
+ 513              		.loc 1 60 3 is_stmt 1 view .LVU103
+ 514 0016 2046     		mov	r0, r4
+ 515 0018 FFF7FEFF 		bl	PWM
+ 516              	.LVL57:
+  61:lib/auto_park.c **** 		motor->pid.home_flag = true;
+ 517              		.loc 1 61 3 view .LVU104
+ 518              		.loc 1 61 24 is_stmt 0 view .LVU105
+ 519 001c 0123     		movs	r3, #1
+ 520 001e 84F82D30 		strb	r3, [r4, #45]
+ 521              	.L41:
+  62:lib/auto_park.c **** 	}
+  63:lib/auto_park.c **** }
+ 522              		.loc 1 63 1 view .LVU106
+ 523 0022 10BD     		pop	{r4, pc}
+ 524              	.LVL58:
+ 525              	.L45:
+  53:lib/auto_park.c **** 		PWM(motor);
+ 526              		.loc 1 53 3 is_stmt 1 view .LVU107
+  53:lib/auto_park.c **** 		PWM(motor);
+ 527              		.loc 1 53 18 is_stmt 0 view .LVU108
+ 528 0024 044B     		ldr	r3, .L46
+ 529 0026 E361     		str	r3, [r4, #28]	@ float
+  54:lib/auto_park.c **** 		motor->pid.home_flag = false;
+ 530              		.loc 1 54 3 is_stmt 1 view .LVU109
+ 531 0028 2046     		mov	r0, r4
+ 532 002a FFF7FEFF 		bl	PWM
+ 533              	.LVL59:
+  55:lib/auto_park.c **** 	}
+ 534              		.loc 1 55 3 view .LVU110
+ARM GAS  /tmp/ccfKZUqS.s 			page 12
+
+
+  55:lib/auto_park.c **** 	}
+ 535              		.loc 1 55 24 is_stmt 0 view .LVU111
+ 536 002e 0023     		movs	r3, #0
+ 537 0030 84F82D30 		strb	r3, [r4, #45]
+ 538 0034 F5E7     		b	.L41
+ 539              	.L47:
+ 540 0036 00BF     		.align	2
+ 541              	.L46:
+ 542 0038 000080BF 		.word	-1082130432
+ 543              		.cfi_endproc
+ 544              	.LFE71:
+ 546              		.section	.text.move,"ax",%progbits
+ 547              		.align	1
+ 548              		.global	move
+ 549              		.syntax unified
+ 550              		.thumb
+ 551              		.thumb_func
+ 553              	move:
+ 554              	.LVL60:
+ 555              	.LFB72:
+  64:lib/auto_park.c **** 
+  65:lib/auto_park.c **** void move(MOTOR *motor)
+  66:lib/auto_park.c **** {
+ 556              		.loc 1 66 1 is_stmt 1 view -0
+ 557              		.cfi_startproc
+ 558              		@ args = 0, pretend = 0, frame = 0
+ 559              		@ frame_needed = 0, uses_anonymous_args = 0
+ 560              		.loc 1 66 1 is_stmt 0 view .LVU113
+ 561 0000 10B5     		push	{r4, lr}
+ 562              	.LCFI3:
+ 563              		.cfi_def_cfa_offset 8
+ 564              		.cfi_offset 4, -8
+ 565              		.cfi_offset 14, -4
+ 566 0002 0446     		mov	r4, r0
+  67:lib/auto_park.c **** 	if( !motor->pid.process_flag )
+ 567              		.loc 1 67 2 is_stmt 1 view .LVU114
+ 568              		.loc 1 67 17 is_stmt 0 view .LVU115
+ 569 0004 90F82430 		ldrb	r3, [r0, #36]	@ zero_extendqisi2
+ 570              		.loc 1 67 4 view .LVU116
+ 571 0008 13B9     		cbnz	r3, .L49
+  68:lib/auto_park.c **** 	{
+  69:lib/auto_park.c **** 		motor->pid.process_flag = true;
+ 572              		.loc 1 69 3 is_stmt 1 view .LVU117
+ 573              		.loc 1 69 27 is_stmt 0 view .LVU118
+ 574 000a 0123     		movs	r3, #1
+ 575 000c 80F82430 		strb	r3, [r0, #36]
+ 576              	.L49:
+  70:lib/auto_park.c **** 	}
+  71:lib/auto_park.c **** 	if( motor->pid.sample_flag )
+ 577              		.loc 1 71 2 is_stmt 1 view .LVU119
+ 578              		.loc 1 71 16 is_stmt 0 view .LVU120
+ 579 0010 94F82530 		ldrb	r3, [r4, #37]	@ zero_extendqisi2
+ 580              		.loc 1 71 4 view .LVU121
+ 581 0014 33B9     		cbnz	r3, .L53
+ 582              	.LVL61:
+ 583              	.L50:
+  72:lib/auto_park.c **** 	{
+ARM GAS  /tmp/ccfKZUqS.s 			page 13
+
+
+  73:lib/auto_park.c **** 		readEncoder(motor);
+  74:lib/auto_park.c **** 		PID_control(motor);
+  75:lib/auto_park.c **** 		motor->pid.sample_flag = false;
+  76:lib/auto_park.c **** 		motor->pid.time_sample = 0;
+  77:lib/auto_park.c **** 	}
+  78:lib/auto_park.c **** 	PWM(motor);
+ 584              		.loc 1 78 2 is_stmt 1 view .LVU122
+ 585 0016 2046     		mov	r0, r4
+ 586 0018 FFF7FEFF 		bl	PWM
+ 587              	.LVL62:
+  79:lib/auto_park.c **** 	if(motor->pid.finish_flag)
+ 588              		.loc 1 79 2 view .LVU123
+ 589              		.loc 1 79 15 is_stmt 0 view .LVU124
+ 590 001c 94F82C30 		ldrb	r3, [r4, #44]	@ zero_extendqisi2
+ 591              		.loc 1 79 4 view .LVU125
+ 592 0020 5BB9     		cbnz	r3, .L54
+ 593              	.L48:
+  80:lib/auto_park.c **** 	{
+  81:lib/auto_park.c **** 		motor->pid.pwm = 0;
+  82:lib/auto_park.c **** 		PWM(motor);
+  83:lib/auto_park.c **** 		motor->pid.process_flag = false;
+  84:lib/auto_park.c **** 		motor->pid.time_sample = 0;
+  85:lib/auto_park.c **** 	}
+  86:lib/auto_park.c **** }
+ 594              		.loc 1 86 1 view .LVU126
+ 595 0022 10BD     		pop	{r4, pc}
+ 596              	.LVL63:
+ 597              	.L53:
+  73:lib/auto_park.c **** 		PID_control(motor);
+ 598              		.loc 1 73 3 is_stmt 1 view .LVU127
+ 599 0024 2046     		mov	r0, r4
+ 600              	.LVL64:
+  73:lib/auto_park.c **** 		PID_control(motor);
+ 601              		.loc 1 73 3 is_stmt 0 view .LVU128
+ 602 0026 FFF7FEFF 		bl	readEncoder
+ 603              	.LVL65:
+  74:lib/auto_park.c **** 		motor->pid.sample_flag = false;
+ 604              		.loc 1 74 3 is_stmt 1 view .LVU129
+ 605 002a 2046     		mov	r0, r4
+ 606 002c FFF7FEFF 		bl	PID_control
+ 607              	.LVL66:
+  75:lib/auto_park.c **** 		motor->pid.time_sample = 0;
+ 608              		.loc 1 75 3 view .LVU130
+  75:lib/auto_park.c **** 		motor->pid.time_sample = 0;
+ 609              		.loc 1 75 26 is_stmt 0 view .LVU131
+ 610 0030 0023     		movs	r3, #0
+ 611 0032 84F82530 		strb	r3, [r4, #37]
+  76:lib/auto_park.c **** 	}
+ 612              		.loc 1 76 3 is_stmt 1 view .LVU132
+  76:lib/auto_park.c **** 	}
+ 613              		.loc 1 76 26 is_stmt 0 view .LVU133
+ 614 0036 A362     		str	r3, [r4, #40]
+ 615 0038 EDE7     		b	.L50
+ 616              	.L54:
+  81:lib/auto_park.c **** 		PWM(motor);
+ 617              		.loc 1 81 3 is_stmt 1 view .LVU134
+  81:lib/auto_park.c **** 		PWM(motor);
+ARM GAS  /tmp/ccfKZUqS.s 			page 14
+
+
+ 618              		.loc 1 81 18 is_stmt 0 view .LVU135
+ 619 003a 0023     		movs	r3, #0
+ 620 003c E361     		str	r3, [r4, #28]	@ float
+  82:lib/auto_park.c **** 		motor->pid.process_flag = false;
+ 621              		.loc 1 82 3 is_stmt 1 view .LVU136
+ 622 003e 2046     		mov	r0, r4
+ 623 0040 FFF7FEFF 		bl	PWM
+ 624              	.LVL67:
+  83:lib/auto_park.c **** 		motor->pid.time_sample = 0;
+ 625              		.loc 1 83 3 view .LVU137
+  83:lib/auto_park.c **** 		motor->pid.time_sample = 0;
+ 626              		.loc 1 83 27 is_stmt 0 view .LVU138
+ 627 0044 0023     		movs	r3, #0
+ 628 0046 84F82430 		strb	r3, [r4, #36]
+  84:lib/auto_park.c **** 	}
+ 629              		.loc 1 84 3 is_stmt 1 view .LVU139
+  84:lib/auto_park.c **** 	}
+ 630              		.loc 1 84 26 is_stmt 0 view .LVU140
+ 631 004a A362     		str	r3, [r4, #40]
+ 632              		.loc 1 86 1 view .LVU141
+ 633 004c E9E7     		b	.L48
+ 634              		.cfi_endproc
+ 635              	.LFE72:
+ 637              		.section	.text.process_data,"ax",%progbits
+ 638              		.align	1
+ 639              		.global	process_data
+ 640              		.syntax unified
+ 641              		.thumb
+ 642              		.thumb_func
+ 644              	process_data:
+ 645              	.LVL68:
+ 646              	.LFB73:
+  87:lib/auto_park.c **** 
+  88:lib/auto_park.c **** /* global function */
+  89:lib/auto_park.c **** void process_data(MACHINE *machine)
+  90:lib/auto_park.c **** {
+ 647              		.loc 1 90 1 is_stmt 1 view -0
+ 648              		.cfi_startproc
+ 649              		@ args = 0, pretend = 0, frame = 0
+ 650              		@ frame_needed = 0, uses_anonymous_args = 0
+ 651              		@ link register save eliminated.
+  91:lib/auto_park.c **** 	char cmd = machine->cdc.receive[0];
+ 652              		.loc 1 91 2 view .LVU143
+ 653              		.loc 1 91 7 is_stmt 0 view .LVU144
+ 654 0000 90F8E430 		ldrb	r3, [r0, #228]	@ zero_extendqisi2
+ 655              	.LVL69:
+  92:lib/auto_park.c **** 	switch(cmd)
+ 656              		.loc 1 92 2 is_stmt 1 view .LVU145
+ 657 0004 413B     		subs	r3, r3, #65
+ 658 0006 112B     		cmp	r3, #17
+ 659 0008 19D8     		bhi	.L55
+ 660 000a DFE803F0 		tbb	[pc, r3]
+ 661              	.L58:
+ 662 000e 11       		.byte	(.L61-.L58)/2
+ 663 000f 18       		.byte	(.L55-.L58)/2
+ 664 0010 09       		.byte	(.L60-.L58)/2
+ 665 0011 0D       		.byte	(.L59-.L58)/2
+ARM GAS  /tmp/ccfKZUqS.s 			page 15
+
+
+ 666 0012 18       		.byte	(.L55-.L58)/2
+ 667 0013 18       		.byte	(.L55-.L58)/2
+ 668 0014 18       		.byte	(.L55-.L58)/2
+ 669 0015 18       		.byte	(.L55-.L58)/2
+ 670 0016 18       		.byte	(.L55-.L58)/2
+ 671 0017 18       		.byte	(.L55-.L58)/2
+ 672 0018 18       		.byte	(.L55-.L58)/2
+ 673 0019 18       		.byte	(.L55-.L58)/2
+ 674 001a 18       		.byte	(.L55-.L58)/2
+ 675 001b 18       		.byte	(.L55-.L58)/2
+ 676 001c 18       		.byte	(.L55-.L58)/2
+ 677 001d 18       		.byte	(.L55-.L58)/2
+ 678 001e 18       		.byte	(.L55-.L58)/2
+ 679 001f 15       		.byte	(.L57-.L58)/2
+ 680              		.p2align 1
+ 681              	.L60:
+  93:lib/auto_park.c **** 	{
+  94:lib/auto_park.c **** 		case 'C':
+  95:lib/auto_park.c **** 			machine->mode = 1; // mode connect
+ 682              		.loc 1 95 4 view .LVU146
+ 683              		.loc 1 95 18 is_stmt 0 view .LVU147
+ 684 0020 0123     		movs	r3, #1
+ 685 0022 80F8E431 		strb	r3, [r0, #484]
+  96:lib/auto_park.c **** 			break;
+ 686              		.loc 1 96 4 is_stmt 1 view .LVU148
+ 687 0026 7047     		bx	lr
+ 688              	.L59:
+  97:lib/auto_park.c **** 		case 'D':
+  98:lib/auto_park.c **** 			machine->mode = 2; // mode disconnect
+ 689              		.loc 1 98 4 view .LVU149
+ 690              		.loc 1 98 18 is_stmt 0 view .LVU150
+ 691 0028 0223     		movs	r3, #2
+ 692 002a 80F8E431 		strb	r3, [r0, #484]
+  99:lib/auto_park.c **** 			break;
+ 693              		.loc 1 99 4 is_stmt 1 view .LVU151
+ 694 002e 7047     		bx	lr
+ 695              	.L61:
+ 100:lib/auto_park.c **** 		case 'A':
+ 101:lib/auto_park.c **** 			machine->mode = 3; // mode add card
+ 696              		.loc 1 101 4 view .LVU152
+ 697              		.loc 1 101 18 is_stmt 0 view .LVU153
+ 698 0030 0323     		movs	r3, #3
+ 699 0032 80F8E431 		strb	r3, [r0, #484]
+ 102:lib/auto_park.c **** 			break;
+ 700              		.loc 1 102 4 is_stmt 1 view .LVU154
+ 701 0036 7047     		bx	lr
+ 702              	.L57:
+ 103:lib/auto_park.c **** 		case 'R':
+ 104:lib/auto_park.c **** 			machine->mode = 4; // mode run motor
+ 703              		.loc 1 104 4 view .LVU155
+ 704              		.loc 1 104 18 is_stmt 0 view .LVU156
+ 705 0038 0423     		movs	r3, #4
+ 706 003a 80F8E431 		strb	r3, [r0, #484]
+ 105:lib/auto_park.c **** 			break;
+ 707              		.loc 1 105 4 is_stmt 1 view .LVU157
+ 708              	.L55:
+ 106:lib/auto_park.c **** 
+ARM GAS  /tmp/ccfKZUqS.s 			page 16
+
+
+ 107:lib/auto_park.c **** 	}
+ 108:lib/auto_park.c **** }
+ 709              		.loc 1 108 1 is_stmt 0 view .LVU158
+ 710 003e 7047     		bx	lr
+ 711              		.cfi_endproc
+ 712              	.LFE73:
+ 714              		.section	.rodata.process_mode.str1.4,"aMS",%progbits,1
+ 715              		.align	2
+ 716              	.LC0:
+ 717 0000 44495343 		.ascii	"DISCONNECT\015\000"
+ 717      4F4E4E45 
+ 717      43540D00 
+ 718              		.section	.text.process_mode,"ax",%progbits
+ 719              		.align	1
+ 720              		.global	process_mode
+ 721              		.syntax unified
+ 722              		.thumb
+ 723              		.thumb_func
+ 725              	process_mode:
+ 726              	.LVL70:
+ 727              	.LFB74:
+ 109:lib/auto_park.c **** void process_mode(MACHINE *machine)
+ 110:lib/auto_park.c **** {
+ 728              		.loc 1 110 1 is_stmt 1 view -0
+ 729              		.cfi_startproc
+ 730              		@ args = 0, pretend = 0, frame = 0
+ 731              		@ frame_needed = 0, uses_anonymous_args = 0
+ 732              		.loc 1 110 1 is_stmt 0 view .LVU160
+ 733 0000 38B5     		push	{r3, r4, r5, lr}
+ 734              	.LCFI4:
+ 735              		.cfi_def_cfa_offset 16
+ 736              		.cfi_offset 3, -16
+ 737              		.cfi_offset 4, -12
+ 738              		.cfi_offset 5, -8
+ 739              		.cfi_offset 14, -4
+ 740 0002 0446     		mov	r4, r0
+ 111:lib/auto_park.c **** 	switch(machine->mode)
+ 741              		.loc 1 111 2 is_stmt 1 view .LVU161
+ 742              		.loc 1 111 16 is_stmt 0 view .LVU162
+ 743 0004 90F8E431 		ldrb	r3, [r0, #484]	@ zero_extendqisi2
+ 744              		.loc 1 111 2 view .LVU163
+ 745 0008 023B     		subs	r3, r3, #2
+ 746 000a 032B     		cmp	r3, #3
+ 747 000c 17D8     		bhi	.L63
+ 748 000e DFE803F0 		tbb	[pc, r3]
+ 749              	.L66:
+ 750 0012 02       		.byte	(.L69-.L66)/2
+ 751 0013 17       		.byte	(.L68-.L66)/2
+ 752 0014 1B       		.byte	(.L67-.L66)/2
+ 753 0015 1F       		.byte	(.L65-.L66)/2
+ 754              		.p2align 1
+ 755              	.L69:
+ 112:lib/auto_park.c **** 	{
+ 113:lib/auto_park.c **** 		case 2: // mode disconnect
+ 114:lib/auto_park.c **** 			sprintf((char*)machine->cdc.trans, "DISCONNECT\r");
+ 756              		.loc 1 114 4 is_stmt 1 view .LVU164
+ 757              		.loc 1 114 19 is_stmt 0 view .LVU165
+ARM GAS  /tmp/ccfKZUqS.s 			page 17
+
+
+ 758 0016 00F59275 		add	r5, r0, #292
+ 759              		.loc 1 114 4 view .LVU166
+ 760 001a 0F4B     		ldr	r3, .L72
+ 761 001c 07CB     		ldmia	r3!, {r0, r1, r2}
+ 762              	.LVL71:
+ 763              		.loc 1 114 4 view .LVU167
+ 764 001e C4F82401 		str	r0, [r4, #292]	@ unaligned
+ 765 0022 C4F82811 		str	r1, [r4, #296]	@ unaligned
+ 766 0026 C4F82C21 		str	r2, [r4, #300]	@ unaligned
+ 115:lib/auto_park.c **** 			CDC_Transmit_FS(machine->cdc.trans, strlen((const char*)machine->cdc.trans));
+ 767              		.loc 1 115 4 is_stmt 1 view .LVU168
+ 768              		.loc 1 115 40 is_stmt 0 view .LVU169
+ 769 002a 2846     		mov	r0, r5
+ 770 002c FFF7FEFF 		bl	strlen
+ 771              	.LVL72:
+ 772              		.loc 1 115 4 discriminator 1 view .LVU170
+ 773 0030 81B2     		uxth	r1, r0
+ 774 0032 2846     		mov	r0, r5
+ 775 0034 FFF7FEFF 		bl	CDC_Transmit_FS
+ 776              	.LVL73:
+ 116:lib/auto_park.c **** 			machine->mode = 0; // mode idle disconnect
+ 777              		.loc 1 116 4 is_stmt 1 view .LVU171
+ 778              		.loc 1 116 18 is_stmt 0 view .LVU172
+ 779 0038 0023     		movs	r3, #0
+ 780 003a 84F8E431 		strb	r3, [r4, #484]
+ 117:lib/auto_park.c **** 			break;
+ 781              		.loc 1 117 4 is_stmt 1 view .LVU173
+ 782              	.L63:
+ 118:lib/auto_park.c **** 		case 3: // mode add card
+ 119:lib/auto_park.c **** 			machine->mode = 1; // mode idle connect
+ 120:lib/auto_park.c **** 			break;
+ 121:lib/auto_park.c **** 		case 4: // mode run motor
+ 122:lib/auto_park.c **** 			machine->mode = 1; // mode idle connect
+ 123:lib/auto_park.c **** 			break;
+ 124:lib/auto_park.c **** 		case 5: // mode scan
+ 125:lib/auto_park.c **** 			machine->mode = 1; // mode idle connect
+ 126:lib/auto_park.c **** 			break;
+ 127:lib/auto_park.c **** 	}
+ 128:lib/auto_park.c **** }
+ 783              		.loc 1 128 1 is_stmt 0 view .LVU174
+ 784 003e 38BD     		pop	{r3, r4, r5, pc}
+ 785              	.LVL74:
+ 786              	.L68:
+ 119:lib/auto_park.c **** 			break;
+ 787              		.loc 1 119 4 is_stmt 1 view .LVU175
+ 119:lib/auto_park.c **** 			break;
+ 788              		.loc 1 119 18 is_stmt 0 view .LVU176
+ 789 0040 0123     		movs	r3, #1
+ 790 0042 80F8E431 		strb	r3, [r0, #484]
+ 120:lib/auto_park.c **** 		case 4: // mode run motor
+ 791              		.loc 1 120 4 is_stmt 1 view .LVU177
+ 792 0046 FAE7     		b	.L63
+ 793              	.L67:
+ 122:lib/auto_park.c **** 			break;
+ 794              		.loc 1 122 4 view .LVU178
+ 122:lib/auto_park.c **** 			break;
+ 795              		.loc 1 122 18 is_stmt 0 view .LVU179
+ARM GAS  /tmp/ccfKZUqS.s 			page 18
+
+
+ 796 0048 0123     		movs	r3, #1
+ 797 004a 80F8E431 		strb	r3, [r0, #484]
+ 123:lib/auto_park.c **** 		case 5: // mode scan
+ 798              		.loc 1 123 4 is_stmt 1 view .LVU180
+ 799 004e F6E7     		b	.L63
+ 800              	.L65:
+ 125:lib/auto_park.c **** 			break;
+ 801              		.loc 1 125 4 view .LVU181
+ 125:lib/auto_park.c **** 			break;
+ 802              		.loc 1 125 18 is_stmt 0 view .LVU182
+ 803 0050 0123     		movs	r3, #1
+ 804 0052 80F8E431 		strb	r3, [r0, #484]
+ 126:lib/auto_park.c **** 	}
+ 805              		.loc 1 126 4 is_stmt 1 view .LVU183
+ 806              		.loc 1 128 1 is_stmt 0 view .LVU184
+ 807 0056 F2E7     		b	.L63
+ 808              	.L73:
+ 809              		.align	2
+ 810              	.L72:
+ 811 0058 00000000 		.word	.LC0
+ 812              		.cfi_endproc
+ 813              	.LFE74:
+ 815              		.section	.text.sample,"ax",%progbits
+ 816              		.align	1
+ 817              		.global	sample
+ 818              		.syntax unified
+ 819              		.thumb
+ 820              		.thumb_func
+ 822              	sample:
+ 823              	.LVL75:
+ 824              	.LFB75:
+ 129:lib/auto_park.c **** 
+ 130:lib/auto_park.c **** void sample(MOTOR *motor)
+ 131:lib/auto_park.c **** {
+ 825              		.loc 1 131 1 is_stmt 1 view -0
+ 826              		.cfi_startproc
+ 827              		@ args = 0, pretend = 0, frame = 0
+ 828              		@ frame_needed = 0, uses_anonymous_args = 0
+ 829              		@ link register save eliminated.
+ 132:lib/auto_park.c **** 	if(motor->pid.process_flag)
+ 830              		.loc 1 132 2 view .LVU186
+ 831              		.loc 1 132 15 is_stmt 0 view .LVU187
+ 832 0000 90F82430 		ldrb	r3, [r0, #36]	@ zero_extendqisi2
+ 833              		.loc 1 132 4 view .LVU188
+ 834 0004 4BB1     		cbz	r3, .L74
+ 133:lib/auto_park.c **** 	{
+ 134:lib/auto_park.c **** 		motor->pid.time_sample++;
+ 835              		.loc 1 134 3 is_stmt 1 view .LVU189
+ 836              		.loc 1 134 13 is_stmt 0 view .LVU190
+ 837 0006 836A     		ldr	r3, [r0, #40]
+ 838              		.loc 1 134 25 view .LVU191
+ 839 0008 0133     		adds	r3, r3, #1
+ 840 000a 8362     		str	r3, [r0, #40]
+ 135:lib/auto_park.c **** 		if(motor->pid.time_sample >= T_SAMPLE)
+ 841              		.loc 1 135 3 is_stmt 1 view .LVU192
+ 842              		.loc 1 135 5 is_stmt 0 view .LVU193
+ 843 000c 022B     		cmp	r3, #2
+ARM GAS  /tmp/ccfKZUqS.s 			page 19
+
+
+ 844 000e 04DD     		ble	.L74
+ 136:lib/auto_park.c **** 		{
+ 137:lib/auto_park.c **** 			motor->pid.time_sample = 0;
+ 845              		.loc 1 137 4 is_stmt 1 view .LVU194
+ 846              		.loc 1 137 27 is_stmt 0 view .LVU195
+ 847 0010 0023     		movs	r3, #0
+ 848 0012 8362     		str	r3, [r0, #40]
+ 138:lib/auto_park.c **** 			motor->pid.sample_flag = true;
+ 849              		.loc 1 138 4 is_stmt 1 view .LVU196
+ 850              		.loc 1 138 27 is_stmt 0 view .LVU197
+ 851 0014 0123     		movs	r3, #1
+ 852 0016 80F82530 		strb	r3, [r0, #37]
+ 853              	.L74:
+ 139:lib/auto_park.c **** 		}
+ 140:lib/auto_park.c **** 	}
+ 141:lib/auto_park.c **** }
+ 854              		.loc 1 141 1 view .LVU198
+ 855 001a 7047     		bx	lr
+ 856              		.cfi_endproc
+ 857              	.LFE75:
+ 859              		.text
+ 860              	.Letext0:
+ 861              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 862              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 863              		.file 4 "/usr/lib/gcc/arm-none-eabi/13.2.0/include/stddef.h"
+ 864              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 865              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 866              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 867              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 868              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 869              		.file 10 "lib/auto_park.h"
+ 870              		.file 11 "USB_DEVICE/App/usbd_cdc_if.h"
+ 871              		.file 12 "/usr/arm-none-eabi/include/string.h"
+ 872              		.file 13 "/usr/arm-none-eabi/include/stdio.h"
+ARM GAS  /tmp/ccfKZUqS.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 auto_park.c
-     /tmp/ccbSAKZJ.s:19     .text.readEncode:00000000 $t
-     /tmp/ccbSAKZJ.s:25     .text.readEncode:00000000 readEncode
-     /tmp/ccbSAKZJ.s:39     .text.move:00000000 $t
-     /tmp/ccbSAKZJ.s:45     .text.move:00000000 move
+     /tmp/ccfKZUqS.s:24     .text.PWM:00000000 $t
+     /tmp/ccfKZUqS.s:30     .text.PWM:00000000 PWM
+     /tmp/ccfKZUqS.s:273    .text.PWM:00000130 $d
+     /tmp/ccfKZUqS.s:279    .text.readEncoder:00000000 $t
+     /tmp/ccfKZUqS.s:285    .text.readEncoder:00000000 readEncoder
+     /tmp/ccfKZUqS.s:322    .text.PID_control:00000000 $t
+     /tmp/ccfKZUqS.s:328    .text.PID_control:00000000 PID_control
+     /tmp/ccfKZUqS.s:472    .text.PID_control:000000b8 $d
+     /tmp/ccfKZUqS.s:478    .text.home:00000000 $t
+     /tmp/ccfKZUqS.s:484    .text.home:00000000 home
+     /tmp/ccfKZUqS.s:542    .text.home:00000038 $d
+     /tmp/ccfKZUqS.s:547    .text.move:00000000 $t
+     /tmp/ccfKZUqS.s:553    .text.move:00000000 move
+     /tmp/ccfKZUqS.s:638    .text.process_data:00000000 $t
+     /tmp/ccfKZUqS.s:644    .text.process_data:00000000 process_data
+     /tmp/ccfKZUqS.s:662    .text.process_data:0000000e $d
+     /tmp/ccfKZUqS.s:680    .text.process_data:00000020 $t
+     /tmp/ccfKZUqS.s:715    .rodata.process_mode.str1.4:00000000 $d
+     /tmp/ccfKZUqS.s:719    .text.process_mode:00000000 $t
+     /tmp/ccfKZUqS.s:725    .text.process_mode:00000000 process_mode
+     /tmp/ccfKZUqS.s:750    .text.process_mode:00000012 $d
+     /tmp/ccfKZUqS.s:754    .text.process_mode:00000016 $t
+     /tmp/ccfKZUqS.s:811    .text.process_mode:00000058 $d
+     /tmp/ccfKZUqS.s:816    .text.sample:00000000 $t
+     /tmp/ccfKZUqS.s:822    .text.sample:00000000 sample
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+__aeabi_fcmpgt
+__aeabi_fcmplt
+__aeabi_fsub
+__aeabi_f2uiz
+__aeabi_fcmpeq
+HAL_GPIO_WritePin
+__aeabi_f2d
+__aeabi_i2d
+__aeabi_dmul
+__aeabi_dadd
+__aeabi_d2f
+__aeabi_i2f
+__aeabi_fmul
+__aeabi_fadd
+__aeabi_ddiv
+HAL_GPIO_ReadPin
+strlen
+CDC_Transmit_FS

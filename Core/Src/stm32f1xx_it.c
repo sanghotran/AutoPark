@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f1xx_it.h"
+#include "auto_park.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -58,6 +59,7 @@
 extern PCD_HandleTypeDef hpcd_USB_FS;
 extern SPI_HandleTypeDef hspi1;
 /* USER CODE BEGIN EV */
+extern MACHINE machine;
 
 /* USER CODE END EV */
 
@@ -184,6 +186,9 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
+	sample(&machine.up);
+	sample(&machine.roll);
+	sample(&machine.out);
 
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();

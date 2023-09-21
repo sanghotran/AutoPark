@@ -22,6 +22,7 @@
 #include "usbd_cdc_if.h"
 
 /* USER CODE BEGIN INCLUDE */
+#include "auto_park.h"
 
 /* USER CODE END INCLUDE */
 
@@ -30,6 +31,7 @@
 /* Private macro -------------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+extern MACHINE machine;
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE END PV */
@@ -261,10 +263,16 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
-  CDC_Transmit_FS(UserRxBufferFS, strlen((const char*)UserRxBufferFS));
+  //CDC_Transmit_FS(UserRxBufferFS, strlen((const char*)UserRxBufferFS));
   for (int i = 0; i < APP_RX_DATA_SIZE; i++)
   {
+	  machine.cdc.receive[i] = UserRxBufferFS[i];
 	  UserRxBufferFS[i] = 0;
+  }
+  process_data(&machine);
+  for (int i = 0; i < APP_RX_DATA_SIZE; i++)
+  {
+	  machine.cdc.receive[i] = 0;
   }
   return (USBD_OK);
   /* USER CODE END 6 */
