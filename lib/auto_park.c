@@ -48,23 +48,20 @@ void PID_control(MOTOR *motor)
 
 void home(MOTOR *motor)
 {
-	if(HAL_GPIO_ReadPin(motor->pin.gpio_home, motor->pin.home) == 1)
+	while(HAL_GPIO_ReadPin(motor->pin.gpio_home, motor->pin.home) == 1)
 	{
 		motor->pid.pwm = -100;
 		PWM(motor);
-		motor->pid.home_flag = false;
 	}
-	else
-	{
-		motor->pid.pwm = 0;
-		PWM(motor);
-		motor->pid.home_flag = true;
-	}
+	motor->pid.pwm = 0;
+	PWM(motor);
 }
 
 void move_home(MACHINE *machine)
 {
-
+	home(&machine->out);
+	home(&machine->up);
+	home(&machine->roll);
 }
 
 void move(MOTOR *motor, int setpoint)
@@ -190,6 +187,11 @@ void process_mode(MACHINE *machine)
 			break;
 		case 6: // mode scan
 			machine->mode = 1; // mode idle connect
+			CDC_Transmit_FS(machine->id, strlen((const char*)machine->id));
+			break;
+		case 7: // mode go home
+			machine->mode = 0; // mode idle disconnect
+			move_home(machine);
 			break;
 	}
 }

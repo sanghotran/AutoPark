@@ -60,7 +60,7 @@ typedef struct {
 	MOTOR out;
 
 	DATA cdc;
-	DATA spi;
+	uint8_t id[64];
 
 	uint8_t mode;
 	uint8_t slot;

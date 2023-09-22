@@ -20,9 +20,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f1xx_it.h"
-#include "auto_park.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "auto_park.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

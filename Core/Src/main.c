@@ -83,7 +83,7 @@ void auto_park_init(void)
 	// Init pin for motor
 	
 	// Init other value of machine
-	machine.mode = 0; // mode idle disconnect
+	machine.mode = 7; // mode go home when restart
 }
 /* USER CODE END PFP */
 
@@ -135,7 +135,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  process_mode(&machine);
+	process_mode(&machine);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
