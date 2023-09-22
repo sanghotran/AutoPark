@@ -55,6 +55,8 @@ void home(MOTOR *motor)
 	}
 	motor->pid.pwm = 0;
 	PWM(motor);
+	motor->pid.pos = 0;
+	*motor->pin.enc = 0;
 }
 
 void move_home(MACHINE *machine)
@@ -180,6 +182,8 @@ void process_mode(MACHINE *machine)
 		case 4: // mode run in motor: up -> out -> up -> roll -> out -> up -> out -> up -> roll -> out
 			machine->mode = 1; // mode idle connect
 			run_in(machine);
+			sprintf((char*)machine->cdc.trans, "DONE\r");
+			CDC_Transmit_FS(machine->cdc.trans, strlen((const char*)machine->cdc.trans));
 			break;
 		case 5: // mode run out motor: out -> up -> roll -> out -> up -> out -> up -> roll -> out -> up
 			machine->mode = 1; // mode idle connect

@@ -31,12 +31,14 @@ typedef struct{
 
 typedef struct{
 	uint32_t *enc;
-	uint32_t channel;
-	uint16_t dir;
 	TIM_HandleTypeDef *htim;
+	uint32_t channel;
 	GPIO_TypeDef *gpio_dir;
+	uint16_t dir;
 	GPIO_TypeDef *gpio_home;
 	uint16_t home;
+	GPIO_TypeDef *gpio_buzzer;
+	uint16_t buzzer;
 
 } PIN;
 
