@@ -1,0 +1,14 @@
+{
+	"configurations":{
+		"OpenOCD":{
+			"adapter": "vscode-cpptools",
+			"configuration":{
+				"request": "launch",
+				"program": "${workspaceRoot}/build/Firmware.elf",
+				"MImode" : "gdb",
+				"MiDebuggerPath": "/usr/bin/arm-none-eabi-gdb",
+				"miDebuggerServerAddress": "127.0.0.1:3333"
+			}
+		}
+	}
+}
